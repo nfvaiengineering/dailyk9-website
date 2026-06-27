@@ -1,359 +1,820 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- auto-publish pipeline verified 2026-06-26 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily K9 Academy — Service dogs are too important to leave to luck</title>
-<meta name="description" content="Owner-trained service dog programs · Maricopa County, AZ. We train teams. Handler first, dog second. ASCT certified. Built by a handler who trained her own.">
-<link rel="icon" href="dk9-logo-emblem-180-favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily K9 Academy — Owner-trained service dog programs in Phoenix, AZ</title>
+<link rel="icon" type="image/png" href="dk9-logo-emblem-512.png">
 <style>
-/* ============================================================
-   DAILY K9 ACADEMY — mockup v3 (2026-06-06)
-   Rebuilt to the ORIGINAL daily-k9-squarespace-buildplan.md spec
-   (recovered 2026-06-06) + merged brand canon deltas:
-   emblem logo files · teal #1F8E8E secondary for inline links ·
-   balanced-methods FAQ (the one copy addition — delete if unwanted).
-   This file is the visual gold standard for the Squarespace build.
-   ============================================================ */
-:root{
-  --bone:       #F2EDDC;  /* bone-warm — primary background */
-  --sand:       #E8DFC8;  /* contrast surface, option cards, founder section */
-  --teal-deep:  #234747;  /* body text, headers, dark sections */
-  --teal-xdark: #182F2F;  /* PSD gradient end, deepest dark */
-  --marigold:   #F99219;  /* CTA, accents, rule */
-  --marigold-d: #D67500;  /* CTA hover */
-  --stone:      #6E665A;  /* body secondary, captions */
-  --stone-soft: #B5AE9F;  /* footer secondary */
-  --bone-cool:  #FAFAF5;  /* rare use, high-contrast variant only */
-  --teal:       #1F8E8E;  /* merged-canon secondary — inline links only */
+:root {
+  --bone: #F2EDDC;
+  --bone-warm: #E8DFC8;
+  --bone-cool: #FAFAF5;
+  --teal: #234747;
+  --teal-deep: #182F2F;
+  --marigold: #F99219;
+  --marigold-deep: #D67500;
+  --stone: #6E665A;
+  --stone-soft: #B5AE9F;
+  --serif: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bone); color:var(--teal-deep);
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bone);
+  color: var(--teal);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-h1,h2,h3{font-family:'Source Serif Pro','Iowan Old Style',Georgia,'Times New Roman',serif;color:var(--teal-deep);font-weight:700}
-h1{font-size:clamp(44px,5.5vw,68px);letter-spacing:-2px;line-height:1.02}
-h2{font-size:clamp(32px,3.5vw,44px);letter-spacing:-1.2px;line-height:1.08}
-h3{font-size:clamp(20px,2vw,24px);letter-spacing:-0.4px;line-height:1.2}
-a{color:var(--teal);text-decoration:none}
-a:hover{color:var(--marigold-d)}
-img{max-width:100%;display:block}
-.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-section{padding:96px 0}
-
-.eyebrow{
-  display:block;font-size:11px;font-weight:500;letter-spacing:3px;
-  text-transform:uppercase;color:var(--marigold);margin-bottom:28px;
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-/* the marigold rule — bridge #4: beneath the manifesto and every H2 */
-.rule{width:64px;height:4px;background:var(--marigold);border:0;border-radius:2px;margin:24px 0 28px}
-.lede{font-size:19px;color:var(--stone);line-height:1.55;max-width:720px}
 
-.btn{
-  display:inline-block;background:var(--marigold);color:var(--bone);
-  font-weight:600;font-size:15px;padding:14px 22px;border-radius:4px;
-  transition:background .15s ease;
+/* NAV */
+nav {
+  border-bottom: 1px solid rgba(35,71,71,0.10);
+  background: rgba(242,237,220,0.96);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.btn:hover{background:var(--marigold-d);color:var(--bone)}
-.btn.ghost{background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal-deep)}
-.btn.ghost:hover{background:var(--teal-deep);color:var(--bone)}
-
-/* ---------- 1 · NAV ---------- */
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(242,237,220,.96);
-  backdrop-filter:blur(6px);   /* Custom CSS — requires Business tier */
-  border-bottom:1px solid var(--sand);
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-.nav{display:flex;align-items:center;gap:28px;padding:12px 24px;max-width:1140px;margin:0 auto}
-.nav .brand{display:flex;align-items:center;gap:11px;color:var(--teal-deep)}
-.nav .brand img{height:44px;width:44px}  /* bridge #3 — card-corner scale */
-.nav .brand .bname{font-family:'Source Serif Pro',Georgia,serif;font-weight:700;font-size:17px;line-height:1.05;letter-spacing:.02em}
-.nav .brand .bname span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:9px;letter-spacing:4px;color:var(--stone)}
-.nav nav{margin-left:auto;display:flex;align-items:center;gap:26px}
-.nav nav a{font-size:15px;font-weight:500;color:var(--teal-deep)}
-.nav nav a:hover{color:var(--marigold-d)}
-.nav .btn{padding:11px 18px;font-size:14px}
-@media(max-width:920px){.nav nav a{display:none}}
-
-/* ---------- 2 · HERO ---------- */
-.hero{padding:88px 0 96px}
-.hero .grid{display:grid;grid-template-columns:60fr 40fr;gap:56px;align-items:center}
-@media(max-width:860px){.hero .grid{grid-template-columns:1fr}.hero{padding:48px 0 64px}}
-.hero .sub{font-size:19px;color:var(--stone);line-height:1.55;max-width:540px;margin-bottom:36px}
-.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
-/* photography slots */
-.photo{
-  aspect-ratio:4/5;border-radius:8px;
-  display:flex;align-items:flex-end;justify-content:flex-start;
-  padding:24px;font-size:13px;line-height:1.5;color:var(--stone);
-  background:linear-gradient(160deg,var(--sand) 0%,#D9CCAA 100%);
-  border:1px dashed var(--stone);
-  position:relative;overflow:hidden;
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--teal);
 }
-/* real photos from  — if the file is missing, the img removes
-   itself and the styled placeholder caption underneath shows instead */
-.photo img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;z-index:1}
-.photo.dark{
-  background:linear-gradient(160deg,#2D5757 0%,var(--teal-xdark) 100%);
-  color:var(--stone-soft);border-color:var(--stone-soft);
+.brand-icon { width: 44px; height: 44px; flex-shrink: 0; }
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
-.photo b{display:block;margin-bottom:4px}
-
-/* ---------- horizon line — secondary place motif ---------- */
-.horizon{display:block;width:100%;height:14px}
-
-/* ---------- 3 · FOUR OPTIONS ---------- */
-.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
-@media(max-width:1000px){.cards4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.cards4{grid-template-columns:1fr}}
-.opt{background:var(--sand);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column}
-.opt .label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(35,71,71,.6);margin-bottom:14px}
-.opt h3{font-size:22px;margin-bottom:12px}
-.opt p{font-size:14px;color:rgba(35,71,71,.88);line-height:1.6}
-.opt.featured{background:var(--marigold)}
-.opt.featured .label{color:rgba(242,237,220,.85)}
-.opt.featured h3{color:var(--bone)}
-.opt.featured p{color:var(--bone)}
-
-/* ---------- 4 · PSD SPECIALTY (dark) ---------- */
-#specialty{background:var(--teal-deep)}
-#specialty .grid{display:grid;grid-template-columns:60fr 40fr;gap:56px;align-items:center}
-@media(max-width:860px){#specialty .grid{grid-template-columns:1fr}}
-#specialty h2{color:var(--bone)}
-#specialty .lede{color:rgba(242,237,220,.78)}
-#specialty blockquote{
-  font-family:'Source Serif Pro',Georgia,serif;font-style:italic;font-size:24px;
-  color:var(--bone);line-height:1.4;
-  border-left:3px solid var(--marigold);padding-left:28px;margin-top:36px;
+.brand-name {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--teal);
+  text-transform: uppercase;
 }
-#specialty .attr{font-size:13px;color:var(--stone-soft);margin-top:16px}
-
-/* ---------- 5 · HOW IT WORKS ---------- */
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px}
-@media(max-width:1000px){.phases{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.phases{grid-template-columns:1fr}}
-.phase{border-top:2px solid var(--marigold);padding-top:22px}
-.phase .pnum{font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--marigold);text-transform:uppercase;margin-bottom:10px}
-.phase h3{font-size:24px;margin-bottom:12px}
-.phase p{font-size:15px;color:var(--stone);line-height:1.65}
-
-/* ---------- 6 · FOUNDER (sand) ---------- */
-#founder{background:var(--sand)}
-#founder .grid{display:grid;grid-template-columns:40fr 60fr;gap:56px;align-items:center}
-@media(max-width:860px){#founder .grid{grid-template-columns:1fr}}
-#founder .story p{font-size:17px;line-height:1.65;max-width:62ch;margin-bottom:18px}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.pill{
-  background:var(--sand);border:1px solid rgba(35,71,71,.18);border-radius:100px;
-  padding:8px 14px;font-size:13px;font-weight:500;color:var(--teal-deep);
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: var(--stone);
+  text-transform: uppercase;
+  margin-top: 4px;
 }
-.signature{font-family:'Source Serif Pro',Georgia,serif;font-style:italic;font-size:19px;color:var(--stone);margin-top:28px}
-
-/* ---------- 7 · FAQ ---------- */
-#faq .inner{max-width:860px}
-.faq-list{margin-top:48px}
-details{border-bottom:1px solid rgba(31,142,142,.15);padding:20px 0}
-details:first-of-type{border-top:1px solid rgba(31,142,142,.15)}
-summary{
-  cursor:pointer;list-style:none;
-  font-family:'Source Serif Pro',Georgia,serif;font-weight:700;font-size:22px;
-  color:var(--teal-deep);display:flex;justify-content:space-between;align-items:center;gap:16px;
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  color: var(--teal);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s ease;
 }
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:26px;color:var(--marigold);flex:none;font-weight:400}
-details[open] summary::after{content:"–"}
-details p{margin-top:14px;font-size:16px;color:var(--stone);max-width:68ch}
+.nav-links a:hover { color: var(--marigold); }
 
-/* ---------- 8a · CTA (marigold) ---------- */
-#schedule{background:var(--marigold);text-align:center}
-#schedule h2{color:var(--bone);max-width:600px;margin:0 auto}
-#schedule p{font-size:19px;color:rgba(242,237,220,.95);max-width:640px;margin:24px auto 36px}
-#schedule .btn{background:var(--bone);color:var(--teal-deep);padding:16px 32px;font-size:16px}
-#schedule .btn:hover{background:var(--bone-cool);color:var(--teal-deep)}
-#schedule .smallnote{font-size:13px;margin-top:20px;color:rgba(242,237,220,.8)}
-#schedule .smallnote a{color:var(--bone);text-decoration:underline}
+.btn-primary {
+  background: var(--marigold);
+  color: var(--bone) !important;
+  padding: 11px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--marigold-deep); }
 
-/* ---------- 8b · FOOTER (deep teal) ---------- */
-footer{background:var(--teal-deep);color:var(--bone);padding:72px 0 32px}
-footer .cols{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px}
-@media(max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){footer .cols{grid-template-columns:1fr}}
-footer .fbrand img{height:72px;width:72px;margin-bottom:16px}
-footer .fbrand .fw{font-size:24px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-footer .fbrand .fa{font-size:11px;letter-spacing:4px;font-weight:500;color:rgba(242,237,220,.6);text-transform:uppercase;margin-top:4px}
-footer .fbrand .ftag{font-family:'Source Serif Pro',Georgia,serif;font-style:italic;font-size:15px;color:rgba(242,237,220,.85);max-width:320px;margin-top:14px}
-footer h4{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone-soft);margin-bottom:16px}
-footer .cols a{display:block;color:var(--bone);font-size:15px;margin-bottom:10px;opacity:.9}
-footer .cols a:hover{opacity:1;color:#fff}
-footer .fbottom{
-  border-top:1px solid rgba(242,237,220,.12);margin-top:56px;padding-top:24px;
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-size:12px;color:rgba(242,237,220,.55);
+.btn-secondary {
+  background: transparent;
+  color: var(--teal);
+  padding: 11px 18px;
+  border: 1px solid var(--teal);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.15s ease;
+}
+.btn-secondary:hover { background: var(--teal); color: var(--bone); }
+
+/* HERO */
+.hero { padding: 88px 0 96px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--marigold);
+  margin-bottom: 28px;
+}
+h1 {
+  font-family: var(--serif);
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--teal);
+}
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--stone);
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+.hero-cta { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.hero-cta .btn-primary { padding: 14px 22px; font-size: 15px; }
+.hero-cta .btn-secondary { padding: 14px 22px; font-size: 15px; }
+
+.photo {
+  background: linear-gradient(135deg, #E8DFC8 0%, #D4C9AE 100%);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent 0 12px, rgba(35,71,71,0.04) 12px 13px);
+}
+.photo-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px dashed var(--stone);
+  padding: 14px 18px;
+  border-radius: 3px;
+  color: var(--stone);
+  background: rgba(242,237,220,0.75);
+  text-align: center;
+  max-width: 260px;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+.photo-hero { aspect-ratio: 4/5; }
+.photo-tall { aspect-ratio: 4/5; }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-dark {
+  background: linear-gradient(135deg, #2D5757 0%, #182F2F 100%);
+}
+.photo-dark .photo-label {
+  border-color: rgba(242,237,220,0.4);
+  color: rgba(242,237,220,0.78);
+  background: rgba(24,47,47,0.4);
+}
+
+/* SECTION COMMON */
+section { padding: 96px 0; }
+.section-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--marigold);
+  margin-bottom: 18px;
+}
+h2 {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -1.2px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--teal);
+}
+.lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--stone);
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+/* THE FOUR OPTIONS */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.option {
+  background: var(--bone-warm);
+  padding: 28px 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(35,71,71,0.06);
+  display: flex;
+  flex-direction: column;
+  color: var(--teal);
+}
+.option.featured {
+  background: var(--marigold);
+  color: var(--bone);
+  border-color: var(--marigold);
+}
+.option-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 14px;
+}
+.option.featured .option-label { opacity: 0.85; }
+.option-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+.option-text {
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+/* PSD SPECIALTY (deep teal) */
+.specialty {
+  background: var(--teal);
+  color: var(--bone);
+}
+.specialty .section-eyebrow { color: var(--marigold); }
+.specialty h2 { color: var(--bone); }
+.specialty .lede { color: rgba(242,237,220,0.78); }
+.specialty-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.pull-quote {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--bone);
+  padding-left: 28px;
+  border-left: 3px solid var(--marigold);
+  margin-top: 36px;
+  max-width: 580px;
+}
+.pull-quote-attribution {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--stone-soft);
+  font-style: normal;
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* HOW IT WORKS */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+}
+.how-step {
+  border-top: 2px solid var(--marigold);
+  padding-top: 28px;
+}
+.how-step-number {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--marigold);
+  margin-bottom: 14px;
+  letter-spacing: 2.5px;
+}
+.how-step-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: var(--teal);
+}
+.how-step-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--stone);
+}
+
+/* FOUNDER */
+.founder { background: var(--bone-warm); }
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: center;
+}
+.founder-body p { margin-bottom: 20px; font-size: 17px; line-height: 1.65; color: var(--teal); }
+.founder-body p:last-of-type { margin-bottom: 0; }
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.credential {
+  background: var(--bone);
+  border: 1px solid rgba(35,71,71,0.18);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 13px;
+  color: var(--teal);
+  font-weight: 500;
+}
+.signature {
+  margin-top: 28px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--stone);
+}
+
+/* FAQ */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 24px;
+  max-width: 860px;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(35,71,71,0.15);
+  padding: 28px 0;
+}
+.faq-item:first-child { border-top: 1px solid rgba(35,71,71,0.15); }
+.faq-q {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  color: var(--teal);
+}
+.faq-a {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--stone);
+  max-width: 720px;
+}
+
+/* CTA */
+.cta {
+  background: var(--marigold);
+  color: var(--bone);
+  text-align: center;
+}
+.cta h2 { color: var(--bone); margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-text {
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 auto 36px;
+  opacity: 0.95;
+}
+.btn-bone {
+  background: var(--bone);
+  color: var(--teal) !important;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease;
+}
+.btn-bone:hover { background: white; }
+
+/* FOOTER */
+footer {
+  background: var(--teal);
+  color: var(--bone);
+  padding: 72px 0 32px;
+  font-size: 14px;
+}
+.footer-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.footer-icon { width: 72px; height: 72px; margin-bottom: 18px; background: var(--bone); border-radius: 50%; padding: 5px; }
+.footer-name {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--bone);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.footer-academy {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  color: rgba(242,237,220,0.6);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.footer-tagline {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(242,237,220,0.85);
+  font-size: 15px;
+  max-width: 320px;
+  line-height: 1.5;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.footer-col h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: rgba(242,237,220,0.6);
+}
+.footer-col a {
+  color: var(--bone);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: var(--marigold); }
+.footer-bottom {
+  border-top: 1px solid rgba(242,237,220,0.12);
+  padding-top: 24px;
+  color: rgba(242,237,220,0.55);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* PROGRAMS / PRICING */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+.price-card {
+  background: var(--bone-warm);
+  border: 1px solid rgba(35,71,71,0.10);
+  border-radius: 8px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+.price-card.premium {
+  background: var(--teal);
+  color: var(--bone);
+  border-color: var(--teal);
+}
+.price-tag-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--marigold);
+  margin-bottom: 14px;
+}
+.price-card h3 {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: inherit;
+}
+.price-meta {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--stone);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.price-card.premium .price-meta { color: var(--stone-soft); }
+.price-figure {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(35,71,71,0.12);
+  color: inherit;
+}
+.price-card.premium .price-figure { border-bottom-color: rgba(242,237,220,0.2); }
+.price-figure small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--stone);
+  margin-top: 10px;
+}
+.price-card.premium .price-figure small { color: var(--stone-soft); }
+.price-banner { display: inline-block; background: var(--marigold); color: var(--bone); font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 9px 16px; border-radius: 4px; }
+.price-list { list-style: none; margin-bottom: 32px; flex-grow: 1; }
+.price-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 12px;
+  color: inherit;
+}
+.price-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 13px;
+  height: 7px;
+  border-left: 2px solid var(--marigold);
+  border-bottom: 2px solid var(--marigold);
+  transform: rotate(-45deg);
+}
+.price-card .btn-primary, .price-card .btn-secondary { align-self: flex-start; }
+.price-card.premium .btn-secondary { color: var(--bone); border-color: rgba(242,237,220,0.5); }
+.price-card.premium .btn-secondary:hover { background: var(--bone); color: var(--teal); }
+
+/* REVIEWS */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+.review-card {
+  background: var(--bone-warm);
+  border: 1px solid rgba(35,71,71,0.08);
+  border-radius: 8px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.review-stars { color: var(--marigold); font-size: 15px; letter-spacing: 3px; margin-bottom: 16px; }
+.review-quote {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--teal);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.review-quote.review-placeholder { color: var(--stone-soft); font-style: italic; }
+.review-attr { font-size: 13px; font-weight: 600; color: var(--stone); letter-spacing: 0.3px; }
+
+/* RESPONSIVE */
+@media (max-width: 920px) {
+  h1 { font-size: 44px; letter-spacing: -1px; }
+  h2 { font-size: 32px; }
+  .hero-grid, .specialty-grid, .founder-grid { grid-template-columns: 1fr; gap: 48px; }
+  .options-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .nav-links { gap: 14px; }
+  .nav-links a:not(.btn-primary) { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+  section { padding: 64px 0; }
+  .hero { padding: 48px 0 64px; }
+  .container { padding: 0 24px; }
+  .pull-quote { font-size: 20px; padding-left: 22px; }
+  .brand-sub { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- ============ 1 · NAV ============ -->
-<header>
-  <div class="nav">
-    <a class="brand" href="#top">
-      <img src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem">
-      <div class="bname">Daily K9<span>ACADEMY</span></div>
+<nav>
+  <div class="container">
+    <a href="#" class="brand-lockup">
+      <img class="brand-icon" src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem">
+      <span class="brand-text">
+        <span class="brand-name">Daily K9</span>
+        <span class="brand-sub">Academy</span>
+      </span>
     </a>
-    <nav>
-      <a href="#program">The Program</a>
-      <a href="#specialty">Specialty</a>
+    <div class="nav-links">
+      <a href="#program">The program</a>
+      <a href="#story">Specialty</a>
       <a href="#founder">Founder</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
-      <a class="btn" href="#schedule">Schedule intake appointment</a>
-    </nav>
+      <a href="#programs">Programs</a>
+      <a href="https://dailyk9.com/service-intake" class="btn-primary">Schedule intake appointment</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<!-- ============ 2 · HERO — the manifesto ============ -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div class="grid">
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
       <div>
-        <span class="eyebrow">Owner-trained service dog programs · Maricopa County, AZ</span>
-        <!-- Bridge #1: the H1 IS the card's manifesto front. Same sentence, serif, color. -->
+        <div class="eyebrow">Owner-trained service dog programs · Phoenix, AZ</div>
         <h1>Service dogs are too important to leave to luck.</h1>
-        <hr class="rule">
-        <p class="sub">We train teams. Handler first, dog second. Twelve to twenty-four months, one-on-one, with the dog you already love. ASCT certified. Built by a handler who trained her own.</p>
-        <div class="ctas">
-          <a class="btn" href="#schedule">Schedule intake appointment</a>
-          <a class="btn ghost" href="#founder">Read the story</a>
+        <p class="hero-sub">We train teams — handler first, then the dog. Twelve to twenty-four months, one-on-one, with the dog you already love.</p>
+        <div class="hero-cta">
+          <a href="https://dailyk9.com/service-intake" class="btn-primary">Schedule intake appointment</a>
+          <a href="#founder" class="btn-secondary">Read the story</a>
         </div>
       </div>
-      <div class="photo">
-        <img class="real" src="Bruce-11.jpg" alt="Nicole and Bruce — focused down-stay, eye contact, golden-hour training session, Phoenix" onerror="this.remove()" style="object-position:center 40%">
-        <div><b>Photo: Nicole and Bruce, Phoenix public-access work — coming Q3</b>
-        Interim: Bruce-11.jpg (Nicole's pick 2026-06-06 — the team in mutual focus). Swap for a true public-access shot when available.</div>
-      </div>
+      <div class="photo photo-hero"><img src="Bruce-11.jpg" alt="Nicole and Bruce training at golden hour — handler and service dog"></div>
     </div>
   </div>
 </section>
 
-<!-- Sonoran horizon line — secondary place motif -->
-<svg class="horizon" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M 0,20 L 0,12 L 38,8.5 L 82,9.5 L 118,7 L 149,12 L 181,11 L 218,9 L 244,5.5 L 271,8 L 309,10 L 341,9 L 379,11 L 400,9.5 L 400,20 Z" fill="#234747"/>
-</svg>
-
-<!-- ============ 3 · THE FOUR OPTIONS ============ -->
 <section id="program">
-  <div class="wrap">
-    <span class="eyebrow">The program</span>
+  <div class="container">
+    <div class="section-eyebrow">The program</div>
     <h2>You have four options. Three are broken.</h2>
-    <hr class="rule">
-    <p class="lede">If you are a disabled person who needs a service dog, you have been given a short list — and most of it has failed the people on it. Daily K9 is the option most people have never heard of.</p>
-    <div class="cards4">
-      <div class="opt">
-        <div class="label">Option One</div>
-        <h3>$40K placement, 5-year waitlist</h3>
-        <p>You wait years. You take what you're given. If it washes out, you're back at the bottom of the list.</p>
+    <p class="lede">If you need a service dog, you've been handed a short list — and most of it fails the people on it.</p>
+    <div class="options-grid">
+      <div class="option">
+        <div class="option-label">Option one</div>
+        <div class="option-name">$40K placement, 5-year waitlist</div>
+        <p class="option-text">Years on a waitlist. You take what you're given. Washes out, you start over.</p>
       </div>
-      <div class="opt">
-        <div class="label">Option Two</div>
-        <h3>Self-train alone from YouTube</h3>
-        <p>The information is everywhere. The accountability is nowhere. Most of these dogs fail — not because the handlers can't, but because no one should do this alone.</p>
+      <div class="option">
+        <div class="option-label">Option two</div>
+        <div class="option-name">Self-train alone from YouTube</div>
+        <p class="option-text">Information everywhere, accountability nowhere. No one should do this alone.</p>
       </div>
-      <div class="opt">
-        <div class="label">Option Three</div>
-        <h3>Fake registry and a vest</h3>
-        <p>Predatory. Targets disabled people specifically. The reason the public is increasingly hostile to real service dog teams.</p>
+      <div class="option">
+        <div class="option-label">Option three</div>
+        <div class="option-name">Fake registry and a vest</div>
+        <p class="option-text">Predatory paperwork — and it makes life harder for real teams.</p>
       </div>
-      <div class="opt featured">
-        <div class="label">Option Four — Daily K9</div>
-        <h3>Owner-training with professional guidance</h3>
-        <p>Your dog. Your disability. Our discipline. Twelve to twenty-four months. ASCT-certified support. A working team at the end.</p>
+      <div class="option featured">
+        <div class="option-label">Option four — Daily K9</div>
+        <div class="option-name">Owner-training with professional guidance</div>
+        <p class="option-text">Your dog. Your disability. Our discipline. A working team at the end.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 4 · PSD SPECIALTY (deep teal) ============ -->
-<section id="specialty">
-  <div class="wrap">
-    <div class="grid">
+<section class="specialty" id="story">
+  <div class="container">
+    <div class="specialty-grid">
       <div>
-        <span class="eyebrow">Specialty</span>
+        <div class="section-eyebrow">Specialty</div>
         <h2>Psychiatric service dog teams.</h2>
-        <hr class="rule">
-        <p class="lede">PSD work is the lane traditional placement programs under-serve and self-certification scams target hardest. It's also the lane Nicole lives in. The tasks a PSD performs — deep pressure, alerting, grounding, room searches, medication reminders, crowd buffering — are not optional to the handler's daily function. We take PSD work as seriously as any other category, because we know what's on the line.</p>
-        <blockquote>"I trained my own PSD because I couldn't afford a placement. His name is Bruce. He is the reason I can sit down and build a company. I built Daily K9 for the person I was four years ago."</blockquote>
-        <div class="attr">— Nicole VanCleave, ASCT certified · PSD handler</div>
+        <p class="lede">The lane placement programs under-serve and scams target hardest — and the lane Nicole lives in. Deep pressure, alerting, grounding, crowd buffering: not optional to a handler's daily function.</p>
+        <div class="pull-quote">
+          "I trained my own PSD because I couldn't afford a placement. His name is Bruce. He is the reason I can sit down and build a company. I built Daily K9 for the person I was four years ago."
+          <div class="pull-quote-attribution">— Nicole VanCleave, ASCT certified · PSD handler</div>
+        </div>
       </div>
-      <div class="photo dark">
-        <img class="real" src="Bruce-13.jpg" alt="Bruce holding a focused down-stay on the training field" onerror="this.remove()">
-        <div><b>Photo: Bruce in working harness</b>
-        Interim: Bruce-13.jpg (down-stay, alert). Alternate: Bruce.jpg (B&amp;W alert profile). Swap for harness/public-access shot when available.</div>
+      <div class="photo photo-tall photo-dark"><img src="Bruce-13.jpg" alt="Bruce, certified psychiatric service dog, on a down-stay at sunset"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">How it works</div>
+    <h2>One-on-one apprenticeship.<br>Twelve to twenty-four months.</h2>
+    <p class="lede">We start with the handler and end with a working team. Monthly milestones, named criteria — not vibes.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-number">PHASE 01</div>
+        <div class="how-step-title">Foundation</div>
+        <p class="how-step-text">We assess your dog — or help you choose one. Health and temperament first, and the handler starts training before the dog does.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-number">PHASE 02</div>
+        <div class="how-step-title">Public-access progression</div>
+        <p class="how-step-text">Graduated exposure to real places — stores, airports, clinics. Explicit, measured standards.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-number">PHASE 03</div>
+        <div class="how-step-title">Disability-specific tasks</div>
+        <p class="how-step-text">The tasks your disability needs, trained with you in the room. The dog learns to read you; you learn to read the dog.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-number">PHASE 04</div>
+        <div class="how-step-title">ASCT backed protection</div>
+        <p class="how-step-text">Graduation against ASCT-backed standards a stranger can verify. We stay with the team for the life of the dog.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 5 · HOW IT WORKS ============ -->
-<section id="how-it-works">
-  <div class="wrap">
-    <span class="eyebrow">How it works</span>
-    <h2>One-on-one apprenticeship. Twelve to twenty-four months.</h2>
-    <hr class="rule">
-    <p class="lede">We start with the handler. We end with a working public-access team. Monthly milestones with named criteria — not vibes. Real timeline. Real cost. No surprises.</p>
-    <div class="phases">
-      <div class="phase">
-        <div class="pnum">Phase 01</div>
-        <h3>Foundation</h3>
-        <p>Prospect selection or assessment of the dog you already have. Health and temperament vetting. Handler training begins before public-access training begins. We build the relationship and the basics.</p>
+<section id="programs">
+  <div class="container">
+    <div class="section-eyebrow">Programs &amp; pricing</div>
+    <h2>Two ways to train with Daily K9.</h2>
+    <p class="lede">The service dog program is the heart of it. We also take a few everyday-obedience clients — pet dogs, real-life manners.</p>
+    <div class="pricing-grid">
+      <div class="price-card premium">
+        <div class="price-tag-label">Service dogs · the core program</div>
+        <h3>Owner-Trained Service Dog Program</h3>
+        <div class="price-meta">12–24 months · one-on-one · PSD specialty</div>
+        <div class="price-figure">A fraction of a $40,000 placement<small>Built around your dog and your timeline — walked through on your free intake call. There's always a path.</small></div>
+        <ul class="price-list">
+          <li>Prospect assessment of your dog — or help choosing one</li>
+          <li>Handler trained alongside the dog, from day one</li>
+          <li>Public-access progression to real-world standards</li>
+          <li>Disability-specific task training</li>
+          <li>ASCT-backed evaluation a stranger can verify</li>
+          <li>Lifetime team support — refreshers and tune-ups</li>
+        </ul>
+        <a href="https://dailyk9.com/service-intake" class="btn-primary">Schedule intake appointment</a>
       </div>
-      <div class="phase">
-        <div class="pnum">Phase 02</div>
-        <h3>Public-access progression</h3>
-        <p>Graduated exposure to real environments — grocery stores, airports, medical settings. The handler learns to handle in public. The dog learns to work through it. Standards are explicit and measured.</p>
-      </div>
-      <div class="phase">
-        <div class="pnum">Phase 03</div>
-        <h3>Disability-specific tasks</h3>
-        <p>The tasks the dog needs to perform for your specific disability are trained with you in the room. The dog learns to read you. You learn to read the dog. The team becomes one unit.</p>
-      </div>
-      <div class="phase">
-        <div class="pnum">Phase 04</div>
-        <h3>ASCT backed protection</h3>
-        <p>The team graduates against ASCT-backed standards — credentials a stranger can verify and evaluations that mean something outside our walls. Daily K9 stays with the team for the life of the dog: refreshers, public-access tune-ups, and the standards-based backing that protects your working status wherever the work takes you.</p>
+      <div class="price-card">
+        <div class="price-tag-label">Now accepting pet clients</div>
+        <h3>Everyday Obedience Training</h3>
+        <div class="price-meta">Pet dogs · private, in-home · Phoenix metro</div>
+        <div class="price-figure"><span class="price-banner">Grand-opening pricing</span><small>Limited-time launch rates — message for current pet-training rates. A few client slots each month.</small></div>
+        <ul class="price-list">
+          <li>Loose-leash walking and reliable recall</li>
+          <li>Sit, place, stay, and rock-solid door manners</li>
+          <li>Jumping, counter-surfing, and greeting fixes</li>
+          <li>Real-world proofing where the problems actually happen</li>
+          <li>Built for busy households — folded into daily life</li>
+        </ul>
+        <a href="https://dailyk9.com/pet-intake" class="btn-secondary">Book basic training</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 6 · FOUNDER (sand) ============ -->
-<section id="founder">
-  <div class="wrap">
-    <div class="grid">
-      <div class="photo">
-        <img class="real" src="Bruce-16.jpg" alt="Nicole and Bruce mid-work — the partnership in motion" onerror="this.remove()">
-        <div><b>Photo: Nicole with Bruce — the working relationship</b>
-        Interim: Bruce-16.jpg (handler + dog in motion). Alternate: Bruce-17.jpg (Nicole portrait profile).</div>
-      </div>
-      <div class="story">
-        <span class="eyebrow">The founder</span>
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="photo photo-tall"><img src="Bruce-16.jpg" alt="Nicole VanCleave heeling Bruce in training"></div>
+      <div>
+        <div class="section-eyebrow">The founder</div>
         <h2>Nicole VanCleave</h2>
-        <hr class="rule">
-        <p>Six years ago, Boeing let me go. I think of it now as the most important door anyone has ever closed for me. I bet on the thing I'd quietly wanted for years — to train dogs full time.</p>
-        <p>Two years in, I needed a psychiatric service dog and couldn't afford a placement. So I trained Bruce. He is the reason I can sit down and build a company.</p>
-        <p>I am ASCT certified. I trained under Chad Hunter at Hunter Canine — one of the top French Ring programs in the country. The pet dog training world is at war with itself about method. The service dog world is at war with itself about access. The methods war isn't my fight. The access gap is.</p>
-        <div class="pills">
-          <span class="pill">ASCT certified</span>
-          <span class="pill">Trained under Hunter Canine</span>
-          <span class="pill">PSD handler · Bruce</span>
-          <span class="pill">Maricopa County, AZ</span>
+        <div class="founder-body">
+          <p>While I was still working a corporate job, I needed a psychiatric service dog and couldn't afford a placement. So I trained Bruce myself. He's the reason I can sit down and build a company.</p>
+          <p>When that job ended, I came to see it as the most important door anyone ever closed for me — it freed me to do full time what I'd already been doing on my own: training dogs.</p>
+          <p>I am ASCT certified. The pet dog training world is at war with itself about method. The service dog world is at war with itself about access. The methods war isn't my fight. The access gap is.</p>
+          <p>This is the work I love, so I never stop learning it — always training up, always sharpening what I bring my handlers. Underneath it all is one conviction: this work is relationship-based. A real working team is built on trust between handler and dog, not just the methods. Get the relationship right and the rest holds.</p>
+        </div>
+        <div class="credentials">
+          <span class="credential">ASCT certified</span>
+          <span class="credential">Relationship-based training</span>
+          <span class="credential">Continuing education</span>
+          <span class="credential">PSD handler · Bruce</span>
+          <span class="credential">Phoenix, AZ</span>
         </div>
         <p class="signature">— I built the program I needed.</p>
       </div>
@@ -361,101 +822,108 @@ footer .fbottom{
   </div>
 </section>
 
-<svg class="horizon" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M 0,20 L 0,11 L 44,9 L 79,10 L 122,6.5 L 152,11.5 L 186,10.5 L 221,8.5 L 248,5 L 274,8.5 L 312,10 L 344,8.5 L 381,11 L 400,9 L 400,20 Z" fill="#234747"/>
-</svg>
-
-<!-- ============ 7 · FAQ ============ -->
-<section id="faq">
-  <div class="wrap">
-    <div class="inner">
-      <span class="eyebrow">Frequently asked</span>
-      <h2>Before you book the call.</h2>
-      <hr class="rule">
-      <p class="lede">The questions most prospective handlers ask in the first ten minutes. Honest answers — the kind I'd want if I were the one calling.</p>
-      <div class="faq-list">
-        <details>
-          <summary>Do I qualify? What counts as a disability?</summary>
-          <p>The ADA defines a disability as a physical or mental impairment that substantially limits one or more major life activities. A service dog is trained to perform specific tasks that mitigate that disability. We'll figure out together on the intake call whether your situation fits and whether a PSD or another type of service dog is the right path.</p>
-        </details>
-        <details>
-          <summary>How much does the program cost?</summary>
-          <p>A fraction of placement. Exact pricing depends on the dog, the disability, and the timeline — full numbers are discussed on the intake call so you can decide before any paperwork. There is always a path. We do not turn handlers away for ability to pay alone.</p>
-        </details>
-        <details>
-          <summary>What if my dog doesn't pass the prospect assessment?</summary>
-          <p>It happens, and it's better to know early. Not every dog is suited for service work — temperament, drive, and health all matter. If your current dog isn't a prospect, we tell you straight, and we help you find one that is.</p>
-        </details>
-        <details>
-          <summary>How is this different from a $40,000 placement program?</summary>
-          <p>You pick your dog. You build the relationship from day one. You are trained alongside the dog so you actually know how to handle. You don't wait five years. You don't pay forty thousand dollars. You do the work. The result is a tighter working team than placement typically produces.</p>
-        </details>
-        <details>
-          <summary>Do I have to live in Maricopa County?</summary>
-          <p>Local handlers get full in-person training. Out-of-state handlers can be supported with hybrid programs that combine intensive in-person blocks with remote coaching. We'll talk through whether the format works for your situation.</p>
-        </details>
-        <details>
-          <summary>Will Daily K9 give my dog a certification?</summary>
-          <p>The ADA does not require certification for service dogs. We do not provide registry paperwork. What we provide is a trained working team that meets real public-access standards. Anyone selling you a "registry" or "certification" is selling air.</p>
-        </details>
-        <!-- ADDED 2026-06-06 (merged canon — balanced-methods rule). Delete if unwanted. -->
-        <details>
-          <summary>What training methods do you use?</summary>
-          <p>Balanced, real-world methods: positive reinforcement paired with clear, fair corrections — the right tool for the right dog, every time. No methodology religion, no gimmicks. Criteria-based training where the dog always understands the rules of the game.</p>
-        </details>
+<section id="reviews">
+  <div class="container">
+    <div class="section-eyebrow">Reviews</div>
+    <h2>What handlers and clients say.</h2>
+    <p class="lede">Honest words from the teams we've worked with — more on the way.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p class="review-quote review-placeholder">"A few honest sentences from a Daily K9 client will live here."</p>
+        <div class="review-attr">Verified review · coming soon</div>
+      </div>
+      <div class="review-card">
+        <p class="review-quote review-placeholder">"Room reserved for a handler's words about training with Daily K9."</p>
+        <div class="review-attr">Verified review · coming soon</div>
+      </div>
+      <div class="review-card">
+        <p class="review-quote review-placeholder">"Another client's experience, in their own words, will appear here."</p>
+        <div class="review-attr">Verified review · coming soon</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 8a · CTA (marigold) ============ -->
-<section id="schedule">
-  <div class="wrap">
-    <h2>Free intake call.</h2>
-    <p>We figure out if your dog is a prospect, if your timeline is realistic, and whether this program is the right fit. If it's not, I'll tell you what is.</p>
-    <!-- BOOKING: mailto for launch. Swap this href to the live booking URL (e.g. Cal.com https://cal.com/dailyk9/intake-call) once chosen. -->
-    <a class="btn" href="mailto:nv@dailyk9.com?subject=Daily%20K9%20intake%20call%20request">Schedule intake appointment</a>
-    <p class="smallnote">Online booking goes live shortly — for now, email <a href="mailto:nv@dailyk9.com">nv@dailyk9.com</a> and we'll set up your free intake call.</p>
+<section id="faq">
+  <div class="container">
+    <div class="section-eyebrow">Frequently asked</div>
+    <h2>Before you book the call.</h2>
+    <p class="lede">The questions handlers ask first. Honest answers.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Do I qualify? What counts as a disability?</div>
+        <div class="faq-a">The ADA covers any impairment that substantially limits a major life activity. We'll figure out on the call whether your situation fits — and what kind of service dog is right.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much does the program cost?</div>
+        <div class="faq-a">A fraction of placement. Exact numbers depend on the dog, the disability, and the timeline — we walk through them on the intake call. There's always a path.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if my dog doesn't pass the prospect assessment?</div>
+        <div class="faq-a">It happens, and better to know early. If your dog isn't a prospect, we tell you straight — and help you find one that is.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from a $40,000 placement program?</div>
+        <div class="faq-a">You pick the dog. You build the relationship from day one. You're trained alongside it, so you actually know how to handle — no five-year wait, no $40,000.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I have to live in Phoenix?</div>
+        <div class="faq-a">Local handlers train in person. Out-of-state, we run a hybrid of intensive in-person blocks and remote coaching.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will Daily K9 give my dog a certification?</div>
+        <div class="faq-a">The ADA doesn't require it, and we don't sell registry paperwork. We provide a trained team that meets real public-access standards. Anyone selling a "registry" is selling air.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 8b · FOOTER (deep teal) ============ -->
+<section class="cta" id="schedule">
+  <div class="container">
+    <h2>Free intake call.</h2>
+    <p class="cta-text">We figure out if your dog's a prospect and whether this is the right fit. If it's not, I'll tell you what is.</p>
+    <a href="https://dailyk9.com/service-intake" class="btn-bone">Schedule intake appointment</a>
+  </div>
+</section>
+
 <footer>
-  <div class="wrap">
-    <div class="cols">
-      <div class="fbrand">
-        <img src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem">
-        <div class="fw">Daily K9</div>
-        <div class="fa">— Academy —</div>
-        <div class="ftag">We train teams. Handler first, dog second.</div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-lockup">
+        <img class="footer-icon" src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem">
+        <div class="footer-name">Daily K9</div>
+        <div class="footer-academy">— Academy —</div>
+        <p class="footer-tagline">We train teams. Handler first, then the dog.</p>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>The program</h4>
-        <a href="#how-it-works">How it works</a>
-        <a href="#specialty">PSD specialty</a>
+        <a href="#program">How it works</a>
+        <a href="#story">PSD specialty</a>
+        <a href="#programs">Programs &amp; pricing</a>
         <a href="#faq">FAQ</a>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>About</h4>
         <a href="#founder">Founder</a>
-        <a href="#specialty">Bruce</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#story">Bruce</a>
         <a href="#founder">Credentials</a>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Contact</h4>
+        <a href="tel:+14807122772">(480) 712-2772</a>
         <a href="mailto:nv@dailyk9.com">nv@dailyk9.com</a>
-        <a href="https://instagram.com/dailyk9academy">@dailyk9academy</a>
-        <a href="#schedule">Schedule a call</a>
+        <a href="https://instagram.com/dailyk9academy" target="_blank" rel="noopener">@dailyk9academy</a>
+        <a href="https://dailyk9.com/service-intake">Schedule a call</a>
       </div>
     </div>
-    <div class="fbottom">
-      <span>© 2026 Daily Doggo Academy, LLC · d/b/a Daily K9 Academy · Maricopa County · Arizona · <a href="privacy-policy.html" style="color:var(--bone);opacity:.7;text-decoration:underline">Privacy</a></span>
+    <div class="footer-bottom">
+      <span>© 2026 Daily Doggo Academy, LLC · d/b/a Daily K9 Academy</span>
       <span>Built by a handler, for handlers.</span>
     </div>
   </div>
 </footer>
 
-<!-- Handler chat widget -->
-<script src="https://handlersystems.com/handler-chat.js" data-handler-key="adcf8f88-40b7-4df9-a0e2-c8e6b21ec211" data-handler-name="Daily K9" data-handler-accent="#F99219" defer></script>
-</body>
-</html>
+
+
+</body></html>

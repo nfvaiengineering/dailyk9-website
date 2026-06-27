@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Daily K9 Academy — Programs &amp; Pricing</title><meta name="description" content="Daily K9 Academy programs and pricing."><link rel="icon" href="dk9-logo-emblem-512.png"><style>
+:root{--bone:#F2EDDC;--bone-warm:#E8DFC8;--bone-cool:#FAFAF5;--teal:#234747;--teal-deep:#182F2F;
+--marigold:#F99219;--marigold-deep:#D67500;--stone:#6E665A;--stone-soft:#B5AE9F;
+--serif:"Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--teal);font-family:var(--sans);font-size:17px;line-height:1.6;
+-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+.container{max-width:880px;margin:0 auto;padding:0 28px;}
+nav{border-bottom:1px solid rgba(35,71,71,0.10);background:rgba(242,237,220,0.96);
+backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1140px;}
+.brand-lockup{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--teal);}
+.brand-icon{width:42px;height:42px;flex-shrink:0;}
+.brand-text{display:flex;flex-direction:column;line-height:1;}
+.brand-name{font-size:18px;font-weight:700;letter-spacing:.5px;color:var(--teal);text-transform:uppercase;}
+.brand-sub{font-size:9px;letter-spacing:3px;font-weight:500;color:var(--stone);text-transform:uppercase;margin-top:4px;}
+.back-link{color:var(--teal);text-decoration:none;font-size:14px;font-weight:500;}
+.back-link:hover{color:var(--marigold);}
+.form-wrap{padding:54px 0 80px;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--marigold-deep);margin-bottom:16px;}
+h1{font-family:var(--serif);font-size:46px;line-height:1.05;letter-spacing:-1.4px;font-weight:700;color:var(--teal-deep);margin-bottom:18px;}
+.lede{font-size:18px;color:var(--stone);margin-bottom:14px;max-width:640px;}
+.note{font-size:14px;color:var(--stone);background:var(--bone-warm);border-left:4px solid var(--marigold);
+padding:14px 18px;border-radius:5px;margin:22px 0 8px;}
+fieldset{border:none;margin:38px 0 0;}
+legend{font-family:var(--serif);font-size:25px;font-weight:700;color:var(--teal-deep);
+padding-bottom:8px;margin-bottom:18px;border-bottom:2px solid var(--marigold);width:100%;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field.full{grid-column:1 / -1;}
+label{font-size:14px;font-weight:600;color:var(--teal);}
+label .hint{font-weight:400;color:var(--stone);font-size:13px;}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{
+font-family:var(--sans);font-size:15px;color:var(--teal-deep);background:var(--bone-cool);
+border:1px solid var(--stone-soft);border-radius:5px;padding:11px 12px;width:100%;transition:border .15s,box-shadow .15s;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--marigold);box-shadow:0 0 0 3px rgba(249,146,25,.18);}
+textarea{min-height:84px;resize:vertical;}
+.radio-row{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;padding-top:4px;}
+.radio-row label{font-weight:400;color:var(--teal-deep);display:flex;align-items:center;gap:7px;cursor:pointer;}
+input[type=radio]{accent-color:var(--marigold-deep);width:17px;height:17px;}
+.pkg{display:flex;flex-direction:column;gap:10px;}
+.pkg label{border:1px solid var(--stone-soft);background:var(--bone-cool);border-radius:6px;padding:13px 15px;
+display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:500;color:var(--teal-deep);transition:border .15s,background .15s;}
+.pkg label:hover{border-color:var(--marigold);}
+.pkg .price{margin-left:auto;font-weight:700;color:var(--teal-deep);}
+.ddd{width:100%;border-collapse:collapse;margin-top:6px;}
+.ddd th{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--stone);font-weight:600;
+text-align:center;padding:6px 4px;}
+.ddd th:first-child{text-align:left;}
+.ddd td{padding:5px 4px;border-top:1px solid rgba(35,71,71,.08);}
+.ddd td:first-child{font-weight:600;color:var(--teal-deep);font-size:14px;}
+.ddd select{padding:7px 6px;font-size:13px;}
+.submit-btn{background:var(--marigold);color:var(--bone);border:none;border-radius:5px;
+padding:16px 30px;font-size:16px;font-weight:700;cursor:pointer;margin-top:34px;transition:background .15s;}
+.submit-btn:hover{background:var(--marigold-deep);}
+.req{color:var(--marigold-deep);}
+#thanks{display:none;text-align:center;padding:70px 20px;}
+#thanks .em{width:90px;height:90px;margin:0 auto 22px;display:block;}
+#thanks h1{font-size:40px;}
+footer{background:var(--teal-deep);color:var(--bone);padding:40px 0;margin-top:40px;}
+footer .container{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;}
+.foot-left{display:flex;align-items:center;gap:12px;}
+.foot-left img{width:38px;height:38px;}
+.foot-name{font-family:var(--serif);font-weight:700;font-size:20px;}
+.foot-tag{font-size:13px;color:var(--stone-soft);}
+footer a{color:var(--marigold);text-decoration:none;}
+@media(max-width:680px){.grid{grid-template-columns:1fr;}h1{font-size:36px;}nav .nav-extra{display:none;}}
+
+.price-hero{padding:54px 0 26px;}
+.track{background:var(--bone-cool);border:1px solid rgba(35,71,71,.10);border-radius:8px;padding:30px 30px 26px;margin:22px 0;}
+.track h2{font-family:var(--serif);font-size:32px;color:var(--teal-deep);letter-spacing:-1px;margin-bottom:4px;}
+.track .sub{color:var(--marigold-deep);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.track p.lede{font-size:16px;margin-bottom:18px;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.card{background:var(--bone-warm);border-radius:6px;padding:20px 18px;display:flex;flex-direction:column;}
+.card .name{font-weight:700;color:var(--teal-deep);font-size:16px;margin-bottom:6px;}
+.card .desc{font-size:14px;color:var(--stone);flex:1;margin-bottom:14px;line-height:1.5;}
+.card .price{font-family:var(--serif);font-size:30px;color:var(--teal-deep);font-weight:700;}
+table.ptable{width:100%;border-collapse:collapse;margin-top:6px;}
+table.ptable th{background:var(--teal-deep);color:var(--bone);font-size:13px;text-align:left;padding:10px 12px;}
+table.ptable th:last-child{text-align:center;}
+table.ptable td{border-top:1px solid rgba(35,71,71,.10);padding:11px 12px;font-size:14px;vertical-align:top;}
+table.ptable td:first-child{font-weight:700;color:var(--teal-deep);white-space:nowrap;}
+table.ptable td:last-child{text-align:center;font-weight:700;color:var(--teal-deep);white-space:nowrap;}
+tr.ongoing td{background:var(--bone);}
+.callout{background:var(--bone-warm);border-left:4px solid var(--marigold);border-radius:6px;padding:18px 20px;margin-top:18px;}
+.callout b{color:var(--teal-deep);}
+.bignum{font-family:var(--serif);color:var(--teal-deep);font-weight:700;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.note{font-size:13px;color:var(--stone);margin-top:10px;}
+ul.good{margin:10px 0 0 0;padding-left:20px;} ul.good li{font-size:14px;color:var(--stone);margin-bottom:6px;}
+@media(max-width:680px){.cards{grid-template-columns:1fr;} .track h2{font-size:26px;}}
+</style></head><body><nav><div class="container"><a href="https://dailyk9.com" class="brand-lockup"><img class="brand-icon" src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem"><span class="brand-text"><span class="brand-name">Daily K9</span><span class="brand-sub">Academy</span></span></a><a class="back-link nav-extra" href="https://dailyk9.com">← Back to dailyk9.com</a></div></nav><main class="container price-hero"><div class="eyebrow">Programs &amp; Pricing</div><h1 style="font-size:46px;letter-spacing:-1.4px;color:var(--teal-deep);margin-bottom:14px;">Honest pricing, no mystery.</h1><p class="lede" style="max-width:640px;">Two programs, two ways to pay. Pet training is simple flat pricing. Service work is built around your dog — here’s exactly how. Questions any time: <a href="mailto:nv@dailyk9.com" style="color:var(--marigold-deep);font-weight:600;">nv@dailyk9.com</a>.</p><div class="track"><div class="sub">Everyday Obedience</div><h2>Pet Dog Training</h2><p class="lede">Private, balanced, in-home training across the Phoenix metro — the same standard I hold service teams to, scaled to real family life.</p><div class="cards"><div class="card"><div class="name">Foundations Package</div><div class="desc">Five private in-home sessions — your goals, a tailored game plan, and homework between sessions. The core program for most families.</div><div class="price">$625</div></div><div class="card"><div class="name">Single Session</div><div class="desc">One 60-minute private session — a tune-up, a specific problem, or a try-before-you-commit start.</div><div class="price">$135</div></div><div class="card"><div class="name">2-Week Board &amp; Train</div><div class="desc">Two weeks of immersive training in my care, plus a go-home handoff. Vaccination records required.</div><div class="price">$2,950</div></div></div><ul class="good"><li>Trained in your home and the real-world places your goals live.</li><li>A limited number of pet-client slots open each month.</li><li>Two-hour cancellation notice; first short-notice cancel is a free pass.</li></ul><div class="cta-row"><a class="btn-primary" href="/pet-intake">Start the intake form →</a><a class="btn-secondary" href="mailto:nv@dailyk9.com">Email Nicole</a></div></div><div class="track"><div class="sub">Owner-Trained Service Dog Program · PSD Specialty</div><h2>Service Dog Training</h2><p class="lede">There’s no flat sticker price, because no two teams are the same. Your investment is built from where your dog is starting, the tasks you need, and your timeline. Most of the program is priced in coaching sessions at <b class="bignum">$135 each</b>, plus fixed fees — because <i>you</i> do the daily training.</p><table class="ptable"><tbody><tr><th>Component</th><th>What it covers</th><th>How it’s priced</th></tr><tr><td>Prospect assessment</td><td>Temperament &amp; health vetting plus a written plan.</td><td>$200</td></tr><tr><td>Foundation</td><td>Obedience to the ASCT baseline — green dogs need more.</td><td>by starting point</td></tr><tr><td>Public access</td><td>Neutrality and graduated access in real environments.</td><td>by scope</td></tr><tr><td>Disability-specific tasks</td><td>Each trained task, priced by complexity.</td><td>by task</td></tr><tr><td>ASCT evaluation &amp; prep</td><td>Standards-based graduation a stranger can verify.</td><td>$400</td></tr><tr class="ongoing"><td>ASCT certification</td><td>The ASCT credential itself — annual recertification keeps it valid (expires end of January).</td><td>$200 / yr</td></tr><tr class="ongoing"><td>Lifetime maintenance</td><td>Refreshers &amp; tune-ups for the life of the dog.</td><td>session rate</td></tr></tbody></table><p class="note">Initial ASCT certification fee is confirmed at graduation; annual recertification is $200/yr.</p><div class="callout"><b>Typical investment:</b> most owner-trained teams land roughly <b class="bignum">$4,000–$9,000</b>, billed as a monthly plan over 12–24 months — versus $20,000–$40,000 for a program-placed dog. You get your exact number on a free intake call, before any paperwork. <b>There’s always a path — no handler is turned away for ability to pay alone.</b></div><div class="cta-row"><a class="btn-primary" href="/service-intake">Start the handler intake →</a><a class="btn-secondary" href="mailto:nv@dailyk9.com">Book a free intake call</a></div></div><p class="note">Pricing shown is current and may be tailored to your situation. Daily K9 trains teams to ASCT standards; under the ADA, no certification or registry is required or legitimate for public access.</p></main><footer><div class="container"><div class="foot-left"><img src="dk9-logo-emblem-512.png" alt="emblem"><div><div class="foot-name">Daily K9 Academy</div><div class="foot-tag">We train teams. Handler first, then the dog.</div></div></div><div class="foot-tag">Phoenix, AZ · <a href="mailto:nv@dailyk9.com">nv@dailyk9.com</a></div></div></footer></body></html>
