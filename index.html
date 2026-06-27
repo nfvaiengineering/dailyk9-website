@@ -700,6 +700,8 @@ footer {
 }
 .review-quote.review-placeholder { color: var(--stone-soft); font-style: italic; }
 .review-attr { font-size: 13px; font-weight: 600; color: var(--stone); letter-spacing: 0.3px; }
+.review-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.review-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; }
 
 /* RESPONSIVE */
 @media (max-width: 920px) {
@@ -737,7 +739,7 @@ footer {
       <a href="#program">The program</a>
       <a href="#story">Specialty</a>
       <a href="#founder">Founder</a>
-      <a href="#reviews">Reviews</a>
+      <a href="reviews.html">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="#programs">Programs</a>
       <a href="https://dailyk9.com/service-intake" class="btn-primary">Schedule intake appointment</a>
@@ -911,6 +913,10 @@ footer {
     <p class="lede">Honest words from the teams we've worked with — more on the way.</p>
     <div class="reviews-grid">
       <div class="review-card">
+        <div class="review-photos">
+          <img src="dk9-review-wedding.jpg" alt="A Daily K9 Academy-trained pointer carrying a wedding bouquet down the aisle" loading="lazy">
+          <img src="dk9-review-wedding2.jpg" alt="A Daily K9 Academy-trained pointer holding red carnations" loading="lazy">
+        </div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-quote">"We wanted our girls to be part of our wedding day. Nicole didn't just work with our dogs — she taught us how to teach them. Our girls learned to carry a bouquet down the aisle, drop the flowers, and sit. They were our best girl and maid of honor."</p>
         <div class="review-attr">Izzy &amp; Piper · Specialized Training</div>
@@ -989,7 +995,7 @@ footer {
       <div class="footer-col">
         <h4>About</h4>
         <a href="#founder">Founder</a>
-        <a href="#reviews">Reviews</a>
+        <a href="reviews.html">Reviews</a>
         <a href="#story">Bruce</a>
         <a href="#founder">Credentials</a>
       </div>
