@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Daily K9 Academy — Provide Vaccination Records</title><meta name="description" content="Securely upload your dog's vaccination records to Daily K9 Academy."><link rel="icon" href="dk9-logo-emblem-512.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"><style>
+:root{--bone:#F2EDDC;--bone-warm:#E8DFC8;--bone-cool:#FAFAF5;--teal:#234747;--teal-deep:#182F2F;
+--marigold:#F99219;--marigold-deep:#D67500;--stone:#6E665A;--stone-soft:#B5AE9F;
+--serif:"Source Serif Pro",Georgia,"Times New Roman",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--teal);font-family:var(--sans);font-size:17px;line-height:1.6;
+-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+.container{max-width:880px;margin:0 auto;padding:0 28px;}
+nav{border-bottom:1px solid rgba(35,71,71,0.10);background:rgba(242,237,220,0.96);
+backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1140px;}
+.brand-lockup{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--teal);}
+.brand-icon{width:42px;height:42px;flex-shrink:0;}
+.brand-text{display:flex;flex-direction:column;line-height:1;}
+.brand-name{font-size:18px;font-weight:700;letter-spacing:.5px;color:var(--teal);text-transform:uppercase;}
+.brand-sub{font-size:9px;letter-spacing:3px;font-weight:500;color:var(--stone);text-transform:uppercase;margin-top:4px;}
+.back-link{color:var(--teal);text-decoration:none;font-size:14px;font-weight:500;}
+.back-link:hover{color:var(--marigold);}
+.form-wrap{padding:54px 0 80px;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--marigold-deep);margin-bottom:16px;}
+h1{font-family:var(--serif);font-size:46px;line-height:1.05;letter-spacing:-1.4px;font-weight:700;color:var(--teal-deep);margin-bottom:18px;}
+.lede{font-size:18px;color:var(--stone);margin-bottom:14px;max-width:640px;}
+.note{font-size:14px;color:var(--stone);background:var(--bone-warm);border-left:4px solid var(--marigold);
+padding:14px 18px;border-radius:5px;margin:22px 0 8px;max-width:640px;}
+.panel{background:var(--bone-cool);border:1px solid rgba(35,71,71,.10);border-radius:10px;padding:32px 34px;max-width:640px;margin-top:30px;}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+label{font-size:14px;font-weight:600;color:var(--teal);}
+label .hint{font-weight:400;color:var(--stone);font-size:13px;}
+input[type=text],input[type=email],input[type=file],textarea{
+font-family:var(--sans);font-size:15px;color:var(--teal-deep);background:var(--bone);
+border:1px solid var(--stone-soft);border-radius:5px;padding:11px 12px;width:100%;transition:border .15s,box-shadow .15s;}
+input:focus,textarea:focus{outline:none;border-color:var(--marigold);box-shadow:0 0 0 3px rgba(249,146,25,.18);}
+input[type=file]{padding:9px 12px;cursor:pointer;}
+input[type=file]::file-selector-button{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--bone);
+background:var(--teal);border:none;border-radius:4px;padding:8px 14px;margin-right:12px;cursor:pointer;transition:background .15s;}
+input[type=file]::file-selector-button:hover{background:var(--teal-deep);}
+textarea{min-height:96px;resize:vertical;}
+.submit-btn{background:var(--marigold);color:var(--bone);border:none;border-radius:5px;
+padding:16px 30px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:background .15s;}
+.submit-btn:hover{background:var(--marigold-deep);}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;}
+.req{color:var(--marigold-deep);}
+.filehint{font-size:13px;color:var(--stone);margin-top:2px;}
+.err{font-size:13px;color:var(--marigold-deep);font-weight:600;margin-top:6px;display:none;}
+footer{background:var(--teal-deep);color:var(--bone);padding:40px 0;margin-top:40px;}
+footer .container{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;}
+.foot-left{display:flex;align-items:center;gap:12px;}
+.foot-left img{width:38px;height:38px;}
+.foot-name{font-family:var(--serif);font-weight:700;font-size:20px;}
+.foot-tag{font-size:13px;color:var(--stone-soft);}
+footer a{color:var(--marigold);text-decoration:none;}
+@media(max-width:680px){h1{font-size:36px;}.panel{padding:26px 22px;}nav .nav-extra{display:none;}}
+</style></head><body>
+<nav><div class="container"><a href="https://dailyk9.com" class="brand-lockup"><img class="brand-icon" src="dk9-logo-emblem-512.png" alt="Daily K9 Academy emblem"><span class="brand-text"><span class="brand-name">Daily K9</span><span class="brand-sub">Academy</span></span></a><a class="back-link nav-extra" href="https://dailyk9.com">← Back to dailyk9.com</a></div></nav>
+<main class="container form-wrap">
+  <div class="eyebrow">Vaccination Records</div>
+  <h1>Submit Vaccination Records</h1>
+  <p class="lede">Before your dog's first day of training, we require up-to-date records for Rabies, DHPP, and Bordetella. Please upload copies of your vet certificates below.</p>
+  <div class="note">Accepted files: PDF, JPG, or PNG. A clear photo of the vaccine certificate from your vet works perfectly.</div>
+
+  <div id="formmain" class="panel">
+    <form id="records" name="vaccination-uploads" method="POST" action="/records-received" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="vaccination-uploads">
+      <p hidden><label>Skip if you're human: <input name="bot-field"></label></p>
+
+      <div class="field">
+        <label for="client_name">Client name <span class="req">*</span></label>
+        <input type="text" id="client_name" name="client_name" required>
+      </div>
+
+      <div class="field">
+        <label for="dog_name">Dog's name <span class="req">*</span></label>
+        <input type="text" id="dog_name" name="dog_name" required>
+      </div>
+
+      <div class="field">
+        <label for="client_email">Client email <span class="req">*</span></label>
+        <input type="email" id="client_email" name="client_email" required>
+      </div>
+
+      <div class="field">
+        <label for="record_upload">Vaccination record <span class="req">*</span> <span class="hint">PDF, JPG, or PNG</span></label>
+        <input type="file" id="record_upload" name="record_upload" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required>
+        <p class="filehint">Max file size: 10 MB. You can attach a single PDF or a photo of the certificate.</p>
+        <p class="err" id="fileErr">Please attach your vaccination record (PDF, JPG, or PNG, under 10&nbsp;MB).</p>
+      </div>
+
+      <div class="field">
+        <label for="notes">Additional notes <span class="hint">optional</span></label>
+        <textarea id="notes" name="notes" placeholder="Anything we should know about your dog's vaccination history?"></textarea>
+      </div>
+
+      <button class="submit-btn" type="submit">Submit records →</button>
+    </form>
+  </div>
+</main>
+
+<footer><div class="container"><div class="foot-left"><img src="dk9-logo-emblem-512.png" alt="emblem"><div><div class="foot-name">Daily K9 Academy</div><div class="foot-tag">We train teams. Handler first, then the dog.</div></div></div><div class="foot-tag">Phoenix, AZ · <a href="mailto:nv@dailyk9.com">nv@dailyk9.com</a></div></div></footer>
+
+<script>
+(function(){
+  var f=document.getElementById("records");
+  var MAX_BYTES=10*1024*1024; // 10 MB
+  f.addEventListener("submit",function(e){
+    var fileInput=document.getElementById("record_upload");
+    var fileErr=document.getElementById("fileErr");
+    fileErr.style.display="none";
+
+    // Block submission if anything is missing/invalid. If all checks pass we
+    // do NOT preventDefault — the native POST goes to Netlify, which captures
+    // the upload and redirects to the action page (/records-received).
+    if(!f.checkValidity()){ e.preventDefault(); f.reportValidity(); return; }
+
+    var file=fileInput.files&&fileInput.files[0];
+    if(!file){
+      e.preventDefault();
+      fileErr.textContent="Please attach your vaccination record before submitting.";
+      fileErr.style.display="block"; fileInput.focus(); return;
+    }
+    if(file.size>MAX_BYTES){
+      e.preventDefault();
+      fileErr.textContent="That file is over 10 MB. Please attach a smaller PDF or photo.";
+      fileErr.style.display="block"; fileInput.focus(); return;
+    }
+
+    var btn=f.querySelector(".submit-btn");
+    if(btn){btn.disabled=true;btn.textContent="Uploading…";}
+  });
+})();
+</script>
+</body></html>

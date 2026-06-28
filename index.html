@@ -701,6 +701,7 @@ footer {
 .review-quote.review-placeholder { color: var(--stone-soft); font-style: italic; }
 .review-attr { font-size: 13px; font-weight: 600; color: var(--stone); letter-spacing: 0.3px; }
 .review-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.review-photos.one { grid-template-columns: 1fr; }
 .review-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; }
 
 /* RESPONSIVE */
@@ -922,8 +923,12 @@ footer {
         <div class="review-attr">Izzy &amp; Piper · Specialized Training</div>
       </div>
       <div class="review-card">
-        <p class="review-quote review-placeholder">"Room reserved for a handler's words about training with Daily K9."</p>
-        <div class="review-attr">Verified review · coming soon</div>
+        <div class="review-photos one">
+          <img src="sophie-grand-canyon.jpg" alt="Sophie, a rescue dog trained by Daily K9 Academy, out on a leash at the Grand Canyon with her family" loading="lazy">
+        </div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-quote">"Sophie came to us a terrified feral rescue, in danger of going back to the shelter. Getting her over her fear and friends with the leash was beyond our skill set — but what we couldn't do, Nicole did overnight. Today Sophie begs to get on the leash and go for rides, walks, and hikes. Nicole built her confidence and frankly saved her life."</p>
+        <div class="review-attr">Sophie · Confidence Building</div>
       </div>
       <div class="review-card">
         <p class="review-quote review-placeholder">"Another client's experience, in their own words, will appear here."</p>
