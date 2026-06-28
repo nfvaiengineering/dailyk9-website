@@ -680,8 +680,21 @@ footer {
 .price-card.premium .btn-secondary:hover { background: var(--bone); color: var(--teal); }
 
 /* REVIEWS */
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+.reviews-grid {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+.reviews-grid::-webkit-scrollbar { height: 8px; }
+.reviews-grid::-webkit-scrollbar-thumb { background: var(--stone-soft); border-radius: 4px; }
+.reviews-grid::-webkit-scrollbar-track { background: transparent; }
 .review-card {
+  flex: 0 0 330px;
+  scroll-snap-align: start;
   background: var(--bone-warm);
   border: 1px solid rgba(35,71,71,0.08);
   border-radius: 8px;
@@ -713,7 +726,7 @@ footer {
   .hero-grid, .specialty-grid, .founder-grid { grid-template-columns: 1fr; gap: 48px; }
   .options-grid { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  .review-card { flex-basis: 80vw; max-width: 340px; }
   .how-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
   .nav-links { gap: 14px; }
   .nav-links a:not(.btn-primary) { display: none; }
