@@ -702,7 +702,9 @@ footer {
 .review-attr { font-size: 13px; font-weight: 600; color: var(--stone); letter-spacing: 0.3px; }
 .review-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
 .review-photos.one { grid-template-columns: 1fr; }
+.review-photos.stack { grid-template-columns: 1fr; }
 .review-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; }
+.review-photos.one img { aspect-ratio: 3 / 4; }
 
 /* RESPONSIVE */
 @media (max-width: 920px) {
@@ -914,7 +916,7 @@ footer {
     <p class="lede">Honest words from the teams we've worked with — more on the way.</p>
     <div class="reviews-grid">
       <div class="review-card">
-        <div class="review-photos">
+        <div class="review-photos stack">
           <img src="dk9-review-wedding.jpg" alt="A Daily K9 Academy-trained pointer carrying a wedding bouquet down the aisle" loading="lazy">
           <img src="dk9-review-wedding2.jpg" alt="A Daily K9 Academy-trained pointer holding red carnations" loading="lazy">
         </div>
