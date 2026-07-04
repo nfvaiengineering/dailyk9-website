@@ -1058,4 +1058,30 @@ footer {
 
 
 
+<!-- Reviews: let a vertical mouse wheel scroll the carousel horizontally -->
+<script>
+(function(){
+  var grid = document.querySelector('.reviews-grid');
+  if(!grid) return;
+  var locked = false;
+  grid.addEventListener('wheel', function(e){
+    if(Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // leave horizontal/trackpad scroll alone
+    var max = grid.scrollWidth - grid.clientWidth;
+    if(max <= 1) return;                                 // nothing to scroll
+    var dir = e.deltaY > 0 ? 1 : -1;
+    var atStart = grid.scrollLeft <= 0;
+    var atEnd = grid.scrollLeft >= max - 1;
+    if((atStart && dir < 0) || (atEnd && dir > 0)) return; // at an edge, let the page scroll
+    e.preventDefault();
+    if(locked) return;                                   // one card per wheel gesture
+    var card = grid.querySelector('.review-card');
+    var step = card ? card.getBoundingClientRect().width + 24 : 300;
+    locked = true;
+    grid.scrollBy({ left: dir * step, behavior: 'smooth' });
+    setTimeout(function(){ locked = false; }, 260);
+  }, { passive: false });
+})();
+</script>
+<!-- Handler chat widget -->
+<script src="https://handlersystems.com/handler-chat.js" data-handler-key="adcf8f88-40b7-4df9-a0e2-c8e6b21ec211" data-handler-name="Daily K9" data-handler-accent="#F99219" defer></script>
 </body></html>
