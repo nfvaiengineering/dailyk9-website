@@ -1,0 +1,7 @@
+# Shared-brain instructions for Claude Code — must NEVER be committed or deployed.
+# Keeping it untracked is what makes dailyk9.com/CLAUDE.md return 404.
+CLAUDE.md
+
+# OS cruft
+.DS_Store
+Thumbs.db
