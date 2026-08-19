@@ -17,10 +17,15 @@
   var TEXT = 'Please don’t share medical details or diagnoses in chat. ' +
              'Tell us what you’re looking for and we’ll take the rest to a private intake call.';
 
+  // Two classes: the widget's own ".hc-gate p" rule (one class + one type) otherwise
+  // wins inside the gate and renders this at 13px in its grey, not our 12px amber.
   var STYLE =
-    '.dk9-chat-notice{margin:0 0 10px;padding:9px 11px;border-radius:10px;' +
+    '.hc-panel .dk9-chat-notice{margin:0 0 10px;padding:9px 11px;border-radius:10px;' +
     'background:#fdf3e3;border:1px solid #f0d9ae;color:#6b5426;' +
-    'font-size:12px;line-height:1.45;font-family:inherit}';
+    'font-size:12px;line-height:1.45;font-family:inherit}' +
+    // Pre-capture the widget hides .hc-foot, but not our notice above it — without
+    // this the same warning renders twice, once in the gate and once stranded below.
+    '.hc-panel:not(.hc-captured) .dk9-chat-notice-composer{display:none}';
 
   function addStyle() {
     if (document.getElementById('dk9-chat-notice-style')) return;
@@ -30,9 +35,9 @@
     document.head.appendChild(s);
   }
 
-  function makeNotice() {
+  function makeNotice(extraClass) {
     var p = document.createElement('p');
-    p.className = 'dk9-chat-notice';
+    p.className = 'dk9-chat-notice' + (extraClass ? ' ' + extraClass : '');
     p.textContent = TEXT;
     return p;
   }
@@ -51,7 +56,7 @@
     var foot = document.querySelector('.hc-foot');
     if (foot && foot.parentNode &&
         !foot.parentNode.querySelector('.hc-foot ~ .dk9-chat-notice, .dk9-chat-notice + .hc-foot')) {
-      foot.parentNode.insertBefore(makeNotice(), foot);
+      foot.parentNode.insertBefore(makeNotice('dk9-chat-notice-composer'), foot);
       done++;
     }
 
