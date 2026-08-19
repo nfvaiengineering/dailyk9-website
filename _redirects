@@ -1,1 +1,10 @@
-/appointments /start 301
+# Old poster QR code
+/appointments                    /start                        301
+
+# .html duplicate of the clean URL — was returning 200 alongside /privacy-policy
+/privacy-policy.html             /privacy-policy               301
+
+# www -> apex. Netlify's domain config already does this (verified 2026-08-19:
+# https://www.dailyk9.com/pricing -> 301 -> https://dailyk9.com/pricing).
+# Kept explicit as belt-and-braces.
+https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
