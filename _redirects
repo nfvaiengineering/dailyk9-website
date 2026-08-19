@@ -1,1 +1,30 @@
-/appointments /start 301
+# Old poster QR code
+/appointments                    /start                        301
+
+# .html duplicates of the clean URLs — Netlify serves BOTH variants with a 200.
+# Canonicals cover the indexable pages; these 301s stop inbound links being spent
+# on the wrong variant. Request /x does not match these rules, so there is no loop.
+/index.html                      /                             301
+/group-classes.html              /group-classes                301
+/how-to-get-a-psychiatric-service-dog-in-arizona.html /how-to-get-a-psychiatric-service-dog-in-arizona 301
+/owner-trained-vs-program-trained-service-dog.html /owner-trained-vs-program-trained-service-dog 301
+/payment.html                    /payment                      301
+/pet-intake.html                 /pet-intake                   301
+/policies.html                   /policies                     301
+/pricing.html                    /pricing                      301
+/privacy-policy.html             /privacy-policy               301
+/provide-records.html            /provide-records              301
+/psychiatric-service-dog-tasks.html /psychiatric-service-dog-tasks 301
+/psychiatric-service-dog-training-phoenix.html /psychiatric-service-dog-training-phoenix 301
+/records-received.html           /records-received             301
+/review-thanks.html              /review-thanks                301
+/reviews.html                    /reviews                      301
+/scheduling.html                 /scheduling                   301
+/service-dog-training-cost-arizona.html /service-dog-training-cost-arizona 301
+/service-intake.html             /service-intake               301
+/start.html                      /start                        301
+
+# www -> apex. Netlify domain config already does this (re-verified 2026-08-19:
+# https://www.dailyk9.com/pricing -> 301 -> https://dailyk9.com/pricing).
+# Kept explicit as belt-and-braces.
+https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
