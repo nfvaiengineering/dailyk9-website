@@ -1,12 +1,22 @@
+# Hand-maintained rules. Everything below the GENERATED marker is produced by
+# tools/check-routes.js --fix from the actual route list — do not hand-edit it.
+
 # Old poster QR code
 /appointments                    /start                        301
 
-# .html duplicates of the clean URLs — Netlify serves BOTH variants with a 200.
-# Canonicals cover the indexable pages; these 301s stop inbound links being spent
-# on the wrong variant. The "!" is required — Netlify ignores a redirect whose source
-# matches a real file in the publish dir unless it is forced. Verified: forcing does NOT
-# re-enter the clean-URL resolver, so /x still serves 200 with zero redirects.
+# www -> apex. Netlify domain config already does this (re-verified 2026-08-19:
+# https://www.dailyk9.com/pricing -> 301 -> https://dailyk9.com/pricing).
+# Kept explicit as belt-and-braces.
+https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
+
+# === BEGIN GENERATED (tools/check-routes.js --fix) — do not hand-edit ===
+# Netlify serves every route at BOTH /x and /x.html with a 200. The trailing
+# "!" is REQUIRED: Netlify ignores a redirect whose source matches a real file
+# unless it is forced. Forcing does not re-enter the clean-URL resolver, so /x
+# still serves 200 with zero hops.
 /index.html                      /                             301!
+/about-nicole.html               /about-nicole                 301!
+/contact.html                    /contact                      301!
 /group-classes.html              /group-classes                301!
 /how-to-get-a-psychiatric-service-dog-in-arizona.html /how-to-get-a-psychiatric-service-dog-in-arizona 301!
 /owner-trained-vs-program-trained-service-dog.html /owner-trained-vs-program-trained-service-dog 301!
@@ -24,11 +34,8 @@
 /scheduling.html                 /scheduling                   301!
 /service-dog-training-cost-arizona.html /service-dog-training-cost-arizona 301!
 /service-intake.html             /service-intake               301!
-/about-nicole.html               /about-nicole                 301!
-/contact.html                    /contact                      301!
 /start.html                      /start                        301!
 
-# www -> apex. Netlify domain config already does this (re-verified 2026-08-19:
-# https://www.dailyk9.com/pricing -> 301 -> https://dailyk9.com/pricing).
-# Kept explicit as belt-and-braces.
-https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
+# Internal tooling must never be served or indexed.
+/tools/*                         /                             404!
+# === END GENERATED ===
