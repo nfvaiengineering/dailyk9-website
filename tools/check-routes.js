@@ -41,6 +41,15 @@ const fail = (route, msg) => failures.push({ route, msg });
  * noise, and metadata on a page that never surfaces is dead weight. */
 const NO_CANONICAL = new Set(["/records-received", "/review-thanks"]);
 
+/* Pages with no <footer> at all, so no footer NAP to check.
+ * /privacy-policy is a legal-document layout whose contact block deliberately
+ * carries the full street address — which the standard footer NAP must NOT.
+ * /review-thanks is a minimal post-submission card. */
+const NO_FOOTER_NAP = new Set(["/privacy-policy", "/review-thanks"]);
+
+/* The canonical footer NAP. One string, everywhere it appears. */
+const NAP = "<!-- NAP -->Phoenix and Maricopa County, Arizona";
+
 // ---------------------------------------------------------------- _redirects
 function generateRedirects() {
   const pad = (s, n) => s + " ".repeat(Math.max(1, n - s.length));
@@ -91,9 +100,23 @@ function checkRedirects() {
 }
 
 // ------------------------------------------------------------------- per-route
+/* Pull the sitewide @graph (Block A) out of a page, raw. */
+function blockA(html) {
+  const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+  let m;
+  while ((m = re.exec(html))) if (m[1].includes('"@graph"')) return m[1].replace(/\r\n/g, "\n").trim();
+  return null;
+}
+
 function checkRoutes() {
   const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
   const rows = [];
+  /* Block A is duplicated into every page by hand, so the only durable check is
+   * byte-identity against one source of truth. Enumerating fields only catches
+   * the fields someone thought to enumerate — that is how /contact shipped with
+   * a stale credential, no foundingDate and no GBP in sameAs. */
+  const canonicalBlockA = blockA(fs.readFileSync(path.join(ROOT, "index.html"), "utf8"));
+  if (!canonicalBlockA) fail("/", "index.html has no @graph — cannot establish canonical Block A");
   for (const f of routes) {
     const s = slugOf(f);
     const html = fs.readFileSync(path.join(ROOT, f), "utf8");
@@ -102,15 +125,32 @@ function checkRoutes() {
     const robots = (html.match(/name="robots" content="([^"]*)"/) || [])[1] || "index,follow";
     const noindex = /noindex/i.test(robots);
     const inSitemap = sitemap.includes("<loc>" + ORIGIN + (s === "/" ? "/" : s) + "</loc>");
-    const blockA = html.includes('"@id": "' + ORIGIN + '/#business"');
+    const graph = blockA(html);
+    const hasBusiness = html.includes('"@id": "' + ORIGIN + '/#business"');
     const nicole = html.includes('"@id": "' + ORIGIN + '/#nicole"');
     const website = html.includes('"@id": "' + ORIGIN + '/#website"');
-    const personUrl = html.includes('"url": "' + ORIGIN + '/about-nicole"');
 
-    if (!blockA) fail(s, "Block A missing (#business not defined)");
+    if (!graph) fail(s, "no sitewide @graph (Block A) on this route");
+    else if (canonicalBlockA && graph !== canonicalBlockA)
+      fail(s, "Block A has DRIFTED from index.html (" + graph.length + " vs " + canonicalBlockA.length + " chars) — resync it");
+    if (!hasBusiness) fail(s, "Block A missing (#business not defined)");
     if (!nicole) fail(s, "#nicole does not resolve on this route");
     if (!website) fail(s, "#website does not resolve on this route");
-    if (!personUrl) fail(s, "Person.url missing — stale Block A copy?");
+
+    /* Scoped to the Person node. A whole-file substring match gave a false PASS
+     * on /about-nicole, whose ProfilePage block has its own "url" field. */
+    let personUrl = false;
+    if (graph) {
+      try {
+        const nodes = JSON.parse(graph)["@graph"] || [];
+        const person = nodes.find(n => n && n["@id"] === ORIGIN + "/#nicole");
+        personUrl = !!(person && person.url === ORIGIN + "/about-nicole");
+      } catch (e) { /* parse failure reported separately below */ }
+    }
+    if (!personUrl) fail(s, "Person node has no url -> /about-nicole (stale Block A copy?)");
+
+    if (!NO_FOOTER_NAP.has(s) && !html.includes(NAP))
+      fail(s, "footer NAP missing or drifted from the canonical string");
     if (!canonical) {
       if (!NO_CANONICAL.has(s)) fail(s, "no canonical");
     } else if (NO_CANONICAL.has(s)) {
