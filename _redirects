@@ -24,6 +24,8 @@
 /scheduling.html                 /scheduling                   301!
 /service-dog-training-cost-arizona.html /service-dog-training-cost-arizona 301!
 /service-intake.html             /service-intake               301!
+/about-nicole.html               /about-nicole                 301!
+/contact.html                    /contact                      301!
 /start.html                      /start                        301!
 
 # www -> apex. Netlify domain config already does this (re-verified 2026-08-19:
