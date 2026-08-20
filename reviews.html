@@ -64,6 +64,14 @@ footer .container{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justif
 .foot-tag{font-size:13px;color:var(--stone-soft);}
 footer a{color:var(--marigold);text-decoration:none;}
 @media(max-width:680px){.grid{grid-template-columns:1fr;}.rev-photos{grid-template-columns:1fr;}.rev{flex-basis:85vw;}h1{font-size:36px;}nav .nav-extra{display:none;}}
+.gcta{background:var(--bone-cool,#FAFAF5);border:1px solid rgba(35,71,71,.15);border-left:4px solid var(--marigold,#F99219);border-radius:10px;padding:22px 24px;margin:0 0 30px;}
+.gcta h2{margin:0 0 6px;font-size:21px;}
+.gcta p{margin:0 0 14px;font-size:15px;color:var(--stone,#6E665A);}
+.gcta-row{display:flex;gap:10px;flex-wrap:wrap;}
+.gbtn{display:inline-block;background:var(--marigold,#F99219);color:#F2EDDC;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:5px;}
+.gbtn:hover{background:var(--marigold-deep,#D67500);}
+.gbtn-alt{display:inline-block;background:transparent;color:var(--teal,#234747);text-decoration:none;font-weight:600;padding:12px 22px;border:1px solid var(--stone-soft,#B5AE9F);border-radius:5px;}
+.gbtn-alt:hover{border-color:var(--marigold,#F99219);color:var(--marigold-deep,#D67500);}
 </style>
 <script type="application/ld+json">
 {
@@ -295,6 +303,15 @@ footer a{color:var(--marigold);text-decoration:none;}
 <h1>What our clients say</h1>
 <p class="lede">Real words from teams trained by Daily K9 Academy in Phoenix — psychiatric service dog handlers and pet families alike. Six teams, in their own words. Worked with us? Scroll down and add yours.</p>
 
+<div class="gcta">
+<h2>Worked with us? Leave a Google review.</h2>
+<p>Google reviews are public, verifiable and the single most useful thing you can do for another handler trying to work out whether this is real. It takes two minutes.</p>
+<div class="gcta-row">
+<a class="gbtn" href="https://search.google.com/local/writereview?placeid=ChIJoTVMVh-Ejq0RuovmERbqOLk" target="_blank" rel="noopener">Leave a Google review</a>
+<a class="gbtn-alt" href="https://maps.google.com/?cid=13346674876222966714" target="_blank" rel="noopener">See all reviews on Google</a>
+</div>
+</div>
+
 <div class="reviews-wall">
 <div class="rev">
 <div class="rev-photos"><img src="dk9-review-wedding.jpg" alt="A Daily K9 Academy-trained pointer carrying a wedding bouquet"><img src="dk9-review-wedding2.jpg" alt="A Daily K9 Academy-trained pointer carrying flowers down the aisle"></div>
@@ -334,7 +351,16 @@ footer a{color:var(--marigold);text-decoration:none;}
 </div>
 <p class="more-soon">More reviews on the way as our Daily K9 families share them.</p>
 
-<form name="reviews" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/review-thanks.html">
+<div class="gcta" id="leave-google-review">
+<h2>Worked with us? Leave a Google review.</h2>
+<p>Google reviews are public, verifiable and the single most useful thing you can do for another handler trying to work out whether this is real. It takes two minutes.</p>
+<div class="gcta-row">
+<a class="gbtn" href="https://search.google.com/local/writereview?placeid=ChIJoTVMVh-Ejq0RuovmERbqOLk" target="_blank" rel="noopener">Leave a Google review</a>
+<a class="gbtn-alt" href="https://maps.google.com/?cid=13346674876222966714" target="_blank" rel="noopener">See all reviews on Google</a>
+</div>
+</div>
+
+<form name="reviews" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/review-thanks">
 <input type="hidden" name="form-name" value="reviews">
 <p hidden><label>Skip: <input name="bot-field"></label></p>
 <fieldset>
@@ -352,6 +378,8 @@ footer a{color:var(--marigold);text-decoration:none;}
 <button class="submit-btn" type="submit">Send my review &rarr;</button>
 </fieldset>
 </form>
+
+<p class="more-soon" style="margin-top:26px">Want to know who you&rsquo;d be working with? Read about <a href="/about-nicole">Nicole VanCleave, ASCT Certified Instructor</a>, or <a href="/start">book a free intake call</a>.</p>
 </main>
 <footer><div class="container"><div class="foot-left"><img src="dk9-emblem.png" alt="emblem"><div><div class="foot-name">Daily K9 Academy</div><div class="foot-tag">We train teams. Handler first, then the dog.</div></div></div><div class="foot-tag"><!-- NAP -->Phoenix and Maricopa County, Arizona &middot; <a href="tel:+14807122772">(480) 712-2772</a> &middot; <a href="mailto:nv@dailyk9.com">nv@dailyk9.com</a></div></div></footer>
 <!-- Handler chat widget -->
