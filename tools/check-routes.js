@@ -48,7 +48,7 @@ const NO_CANONICAL = new Set(["/records-received", "/review-thanks"]);
 const NO_FOOTER_NAP = new Set(["/privacy-policy", "/review-thanks"]);
 
 /* The canonical footer NAP. One string, everywhere it appears. */
-const NAP = "<!-- NAP -->Phoenix and Maricopa County, Arizona";
+const NAP = "<!-- NAP -->Goodyear and greater Maricopa County, Arizona";
 
 // ---------------------------------------------------------------- _redirects
 function generateRedirects() {
