@@ -289,6 +289,12 @@ h2 {
   display: flex;
   flex-direction: column;
   color: var(--teal);
+  /* Grid items default to min-width:auto, so a track can't shrink below its
+     content's min-content width. Without this, the longest word in
+     .option-name forced column 2 wider than its 1fr share (measured 171.5px +
+     186.5px instead of equal halves) and pushed the page 6px past the viewport
+     at 390px. */
+  min-width: 0;
 }
 .option.featured {
   background: var(--marigold);
@@ -312,6 +318,10 @@ h2 {
   margin-bottom: 16px;
   line-height: 1.2;
   letter-spacing: -0.4px;
+  /* Paired with min-width:0 above: the track can now shrink, so a long word
+     ("Owner-training", "professional") has to be allowed to break rather than
+     spill out of the card. */
+  overflow-wrap: break-word;
 }
 .option-text {
   font-size: 14px;
@@ -702,6 +712,16 @@ footer {
   .container { padding: 0 24px; }
   .pull-quote { font-size: 20px; padding-left: 22px; }
   .brand-sub { display: none; }
+}
+
+/* Phones. Until now 920px was the ONLY breakpoint in this file, so a 390px
+   screen still got the two-column layout meant for tablets: four 22px serif
+   headings crammed into ~156px columns. One column reads properly and removes
+   the last chance for the min-content overflow above to come back. */
+@media (max-width: 560px) {
+  .options-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
 }
 .footer-nap{display:block;font-size:14px;color:var(--stone-soft);margin-bottom:10px;line-height:1.4;}
 </style>
