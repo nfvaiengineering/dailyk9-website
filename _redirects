@@ -16,6 +16,8 @@ https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
 # still serves 200 with zero hops.
 /index.html                      /                             301!
 /about-nicole.html               /about-nicole                 301!
+/call-requested.html             /call-requested               301!
+/checklist-sent.html             /checklist-sent               301!
 /contact.html                    /contact                      301!
 /group-classes.html              /group-classes                301!
 /how-to-get-a-psychiatric-service-dog-in-arizona.html /how-to-get-a-psychiatric-service-dog-in-arizona 301!
@@ -32,6 +34,7 @@ https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
 /review-thanks.html              /review-thanks                301!
 /reviews.html                    /reviews                      301!
 /scheduling.html                 /scheduling                   301!
+/service-dog-checklist.html      /service-dog-checklist        301!
 /service-dog-training-cost-arizona.html /service-dog-training-cost-arizona 301!
 /service-intake.html             /service-intake               301!
 /start.html                      /start                        301!

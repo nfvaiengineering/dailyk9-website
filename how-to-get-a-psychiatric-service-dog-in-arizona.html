@@ -120,6 +120,20 @@ footer a{color:var(--marigold);text-decoration:none;}
 .authorbox p{margin:0;font-size:15px;color:var(--stone);}
 .authorbox a{color:var(--marigold-deep);font-weight:600;text-decoration:none;}
 @media(max-width:520px){.authorbox{flex-direction:column;gap:12px;}}
+.capture{background:var(--teal);color:var(--bone);border-radius:10px;padding:26px 28px;margin:36px 0 8px;}
+.capture .capture-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--marigold);margin:0 0 8px;}
+.capture .capture-title{font-family:var(--serif);font-size:24px;line-height:1.15;font-weight:700;color:var(--bone);margin:0 0 8px;}
+.capture p{color:var(--bone-warm);font-size:16px;margin:0 0 14px;}
+.capture label{display:block;font-size:14px;font-weight:600;color:var(--bone);margin-bottom:6px;}
+.capture-row{display:flex;flex-wrap:wrap;gap:10px;}
+.capture-row input{flex:1 1 220px;min-width:0;font-family:var(--sans);font-size:16px;color:var(--teal-deep);background:var(--bone-cool);border:1px solid var(--stone-soft);border-radius:5px;padding:13px 14px;}
+.capture-row input:focus{outline:none;border-color:var(--marigold);box-shadow:0 0 0 3px rgba(249,146,25,.3);}
+.capture-row button{flex:0 0 auto;background:var(--marigold);color:var(--bone);border:none;border-radius:5px;padding:13px 22px;font-size:16px;font-weight:700;cursor:pointer;}
+.capture-row button:hover{background:var(--marigold-deep);}
+.capture .capture-fine{font-size:13px;color:var(--stone-soft);margin:12px 0 0;}
+.capture .capture-fine a{color:var(--marigold);text-decoration:none;}
+.endcta .capacity{font-size:15px;font-weight:600;margin:-8px auto 22px;}
+@media(max-width:520px){.capture{padding:22px 20px;}.capture-row button{flex:1 1 100%;}}
 </style>
 <script type="application/ld+json">
 {
@@ -388,6 +402,20 @@ footer a{color:var(--marigold);text-decoration:none;}
 
   <h2>First: do you qualify?</h2>
   <p>Under the Americans with Disabilities Act (ADA), you qualify for a service dog if you have an impairment that <strong>substantially limits a major life activity</strong> — and, for a psychiatric service dog, a dog can be trained to perform <strong>tasks</strong> that help with that disability. There is no government registry and <strong>no certification or doctor's letter is required for public access</strong>. A mental-health provider's input can still help with task planning, and certain situations like housing or air travel have their own documentation rules. On a free call, we'll help you figure out whether your situation fits.</p>
+  <div class="capture">
+    <p class="capture-eyebrow">Free checklist</p>
+    <p class="capture-title">Owner-trained service dog intake checklist</p>
+    <p>Ten things to have ready before an intake call: your tasks, your dog's profile, vet records, training time, budget, and the Arizona rules.</p>
+    <form name="checklist" method="POST" action="/checklist-sent" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="checklist">
+      <input type="hidden" name="page" value="/how-to-get-a-psychiatric-service-dog-in-arizona">
+      <p hidden><label>Skip: <input name="bot-field"></label></p>
+      <label for="checklist-email">Your email</label>
+      <div class="capture-row"><input type="email" id="checklist-email" name="email" autocomplete="email" required><button type="submit">Send me the checklist</button></div>
+    </form>
+    <p class="capture-fine">See our <a href="/privacy-policy">privacy policy</a> for how your email is handled.</p>
+  </div>
+
 
   <h2>The step-by-step path</h2>
   <div class="step"><div class="num">1</div><div><h3>Confirm the disability a dog can mitigate</h3><p>Identify the daily barriers a trained dog could actually help with — panic, dissociation, hypervigilance, getting out the door.</p></div></div>
@@ -426,6 +454,7 @@ footer a{color:var(--marigold);text-decoration:none;}
   <div class="endcta">
     <h2>Start with a free intake call.</h2>
     <p>We'll tell you honestly whether your dog's a prospect and what your path looks like — before any paperwork. Nicole replies within one business day. No cost, no pressure.</p>
+    <p class="capacity">I work with a maximum of two active service dog teams at a time.</p>
     <a class="btn-bone" href="https://dailyk9.com/start">Book your free intake call</a>
   </div>
   <div class="authorbox">
