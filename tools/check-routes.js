@@ -39,13 +39,22 @@ const fail = (route, msg) => failures.push({ route, msg });
  * Post-submission thank-you pages: noindex, nofollow, no inbound links, reached
  * only by a form redirect. A canonical on a page no crawler should reach is
  * noise, and metadata on a page that never surfaces is dead weight. */
-const NO_CANONICAL = new Set(["/records-received", "/review-thanks"]);
+const NO_CANONICAL = new Set([
+  "/records-received", "/review-thanks",
+  "/call-requested",        // post-submission thank-you for the /start call-request form
+  "/checklist-sent",        // post-submission thank-you for the service-dog checklist form
+  "/service-dog-checklist", // noindex lead magnet, reached from /checklist-sent, not a search landing page
+]);
 
 /* Pages with no <footer> at all, so no footer NAP to check.
  * /privacy-policy is a legal-document layout whose contact block deliberately
  * carries the full street address — which the standard footer NAP must NOT.
  * /review-thanks is a minimal post-submission card. */
-const NO_FOOTER_NAP = new Set(["/privacy-policy", "/review-thanks"]);
+const NO_FOOTER_NAP = new Set([
+  "/privacy-policy", "/review-thanks",
+  "/call-requested",        // minimal post-submission card, same layout as /review-thanks
+  "/checklist-sent",        // minimal post-submission card, same layout as /review-thanks
+]);
 
 /* The canonical footer NAP. One string, everywhere it appears. */
 const NAP = "<!-- NAP -->Goodyear and greater Maricopa County, Arizona";
