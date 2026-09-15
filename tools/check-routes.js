@@ -56,8 +56,24 @@ const NO_FOOTER_NAP = new Set([
   "/checklist-sent",        // minimal post-submission card, same layout as /review-thanks
 ]);
 
-/* The canonical footer NAP. One string, everywhere it appears. */
-const NAP = "<!-- NAP -->Goodyear and greater Maricopa County, Arizona";
+/* The canonical footer NAP. One string, everywhere it appears.
+ * Read from index.html rather than hardcoded. A literal here goes stale the
+ * moment the NAP is edited on the site, and then this script fails on EVERY
+ * page for a reason that has nothing to do with routing — which is a guard
+ * nobody runs. That happened once already: commit 5ad5295 (3 Sep 2026) changed
+ * the NAP and left the constant behind, the script went red on 19 of 21 routes,
+ * the route list got hand-checked instead, and the hand-check invented two
+ * 404s that did not exist. The home page is the source; every other page must
+ * match it. */
+const NAP = (() => {
+  const home = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const m = home.match(/<!-- NAP -->[^<&]*/);
+  if (!m) {
+    console.error("FATAL: no <!-- NAP --> marker in index.html — nothing to compare against.");
+    process.exit(1);
+  }
+  return m[0].trimEnd();
+})();
 
 // ---------------------------------------------------------------- _redirects
 function generateRedirects() {
