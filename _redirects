@@ -38,6 +38,7 @@ https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
 /service-dog-training-cost-arizona.html /service-dog-training-cost-arizona 301!
 /service-intake.html             /service-intake               301!
 /start.html                      /start                        301!
+/types-of-service-dogs.html      /types-of-service-dogs        301!
 
 # Internal tooling must never be served or indexed.
 /tools/*                         /                             404!

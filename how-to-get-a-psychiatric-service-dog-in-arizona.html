@@ -69,7 +69,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;pad
 .brand-text{display:flex;flex-direction:column;line-height:1;}
 .brand-name{font-size:18px;font-weight:700;letter-spacing:.5px;color:var(--teal);text-transform:uppercase;}
 .brand-sub{font-size:9px;letter-spacing:3px;font-weight:500;color:var(--stone);text-transform:uppercase;margin-top:4px;}
-.nav-cta{background:var(--marigold);color:var(--bone);padding:10px 16px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;}
+.nav-cta{background:var(--marigold);color:#182F2F;padding:10px 16px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;}
 .nav-cta:hover{background:var(--marigold-deep);}
 main{padding:56px 0 20px;}
 .eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--marigold-deep);margin-bottom:16px;}
@@ -81,7 +81,7 @@ p{margin-bottom:18px;}
 a.inline{color:var(--marigold-deep);font-weight:600;text-decoration:none;}
 a.inline:hover{text-decoration:underline;}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 8px;}
-.btn-primary{display:inline-block;background:var(--marigold);color:var(--bone);text-decoration:none;font-weight:700;padding:14px 26px;border-radius:5px;transition:background .15s;}
+.btn-primary{display:inline-block;background:var(--marigold);color:#182F2F;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:5px;transition:background .15s;}
 .btn-primary:hover{background:var(--marigold-deep);}
 .btn-secondary{display:inline-block;background:transparent;color:var(--teal);text-decoration:none;font-weight:600;padding:14px 26px;border:1px solid var(--stone-soft);border-radius:5px;}
 .btn-secondary:hover{border-color:var(--marigold);color:var(--marigold-deep);}
@@ -98,8 +98,8 @@ a.inline:hover{text-decoration:underline;}
 .related{background:var(--bone-warm);border-radius:10px;padding:24px 28px;margin:40px 0 8px;}
 .related h2{margin:0 0 10px;font-size:22px;}
 .related a{display:block;color:var(--marigold-deep);font-weight:600;text-decoration:none;margin-bottom:8px;}
-.endcta{background:var(--marigold);color:var(--bone);border-radius:10px;padding:40px 32px;text-align:center;margin:40px 0 8px;}
-.endcta h2{color:var(--bone);margin:0 0 12px;}
+.endcta{background:var(--marigold);color:#182F2F;border-radius:10px;padding:40px 32px;text-align:center;margin:40px 0 8px;}
+.endcta h2{color:#182F2F;margin:0 0 12px;}
 .endcta p{max-width:520px;margin:0 auto 22px;opacity:.95;}
 .btn-bone{display:inline-block;background:var(--bone);color:var(--teal);padding:15px 30px;border-radius:5px;font-weight:700;text-decoration:none;}
 footer{background:var(--teal-deep);color:var(--bone);padding:40px 0;margin-top:48px;}
@@ -207,7 +207,7 @@ footer a{color:var(--marigold);text-decoration:none;}
       "email": "nv@dailyk9.com",
       "priceRange": "$$",
       "foundingDate": "2025",
-      "description": "Owner-trained psychiatric service dog programs and in-home obedience training in Goodyear and greater Maricopa County, Arizona. Handler-first, one-on-one apprenticeship over 12-24 months. ASCT Certified Instructor.",
+      "description": "Owner-trained service dog programs (psychiatric, autism, medical alert and response, mobility) and in-home obedience training in Goodyear and greater Maricopa County, Arizona. Handler-first, one-on-one apprenticeship over 12-24 months. ASCT Certified Instructor.",
       "founder": {
         "@id": "https://dailyk9.com/#nicole"
       },
@@ -299,6 +299,9 @@ footer a{color:var(--marigold);text-decoration:none;}
       ],
       "knowsAbout": [
         "Psychiatric service dog training",
+        "Autism service dog training",
+        "Medical alert and response service dog training",
+        "Mobility service dog training",
         "Owner-trained service dogs",
         "Public access training",
         "Deep pressure therapy",
@@ -314,7 +317,7 @@ footer a{color:var(--marigold);text-decoration:none;}
             "itemOffered": {
               "@type": "Service",
               "name": "Owner-Trained Service Dog Program",
-              "serviceType": "Psychiatric service dog training",
+              "serviceType": "Service dog training",
               "provider": {
                 "@id": "https://dailyk9.com/#business"
               }
@@ -396,7 +399,7 @@ footer a{color:var(--marigold);text-decoration:none;}
   <div class="eyebrow">Guide · Phoenix &amp; Maricopa County, AZ</div>
   <h1>How to Get a Psychiatric Service Dog in Arizona</h1>
   <p class="byline">By <a href="/about-nicole">Nicole VanCleave</a>, ASCT Certified Instructor <span class="sep">&middot;</span> <span>Last updated <time datetime="2026-08-19">19 August 2026</time></span></p>
-  <p class="lede">Getting a psychiatric service dog in Arizona takes four things: a disability a dog can mitigate, the right dog, trained tasks, and public-access reliability. Arizona law is unusually favorable to owner-trainers — it protects dogs &ldquo;individually trained or in training,&rdquo; which federal ADA does not.</p>
+  <p class="lede">Daily K9 Academy's short answer: getting a psychiatric service dog in Arizona takes four things: a disability a dog can mitigate, the right dog, trained tasks, and public-access reliability. Arizona law is unusually favorable to owner-trainers — it protects dogs &ldquo;individually trained or in training,&rdquo; which federal ADA does not.</p>
   <div class="cta-row">
     <a class="btn-primary" href="https://dailyk9.com/start">Start with a free intake call</a>
     <a class="btn-secondary" href="https://dailyk9.com/service-dog-training-cost-arizona">See what it costs</a>
@@ -423,9 +426,9 @@ footer a{color:var(--marigold);text-decoration:none;}
   <div class="step"><div class="num">1</div><div><h3>Confirm the disability a dog can mitigate</h3><p>Identify the daily barriers a trained dog could actually help with — panic, dissociation, hypervigilance, getting out the door.</p></div></div>
   <div class="step"><div class="num">2</div><div><h3>Choose the right dog (or assess yours)</h3><p>Health and temperament come first. We assess your current dog as a prospect, or help you choose one — better to know early.</p></div></div>
   <div class="step"><div class="num">3</div><div><h3>Build foundation obedience</h3><p>Reliable obedience is the base everything else is built on, and the handler starts training before the dog does.</p></div></div>
-  <div class="step"><div class="num">4</div><div><h3>Public-access training</h3><p>Graduated exposure to real places — stores, clinics, airports — until your dog is calm and neutral enough that no one notices him.</p></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Public-access training</h3><p>Graduated exposure to real places — stores, clinics, airports — until your dog can settle and work calmly in public.</p></div></div>
   <div class="step"><div class="num">5</div><div><h3>Train disability-specific tasks</h3><p>The tasks your disability needs, trained with you in the room. See <a class="inline" href="https://dailyk9.com/psychiatric-service-dog-tasks">psychiatric service dog tasks</a> for examples.</p></div></div>
-  <div class="step"><div class="num">6</div><div><h3>Evaluate to a verifiable standard &amp; maintain</h3><p>Graduate against ASCT (American Society of Canine Trainers) standards a stranger can verify — then keep the team sharp for the life of the dog.</p></div></div>
+  <div class="step"><div class="num">6</div><div><h3>Evaluate to a verifiable standard &amp; maintain</h3><p>Graduate against ASCT (American Society of Canine Trainers International) standards a stranger can verify — then keep the team sharp for the life of the dog.</p></div></div>
 
   <h2>Owner-trained is a legitimate path</h2>
   <p>You do not need a $40,000 placement or a years-long waitlist. Owner-trained service dogs have the same public-access rights under the ADA, and you keep the dog you already love. Compare the routes on <a class="inline" href="https://dailyk9.com/owner-trained-vs-program-trained-service-dog">owner-trained vs. program-placed service dogs</a>.</p>
@@ -463,7 +466,7 @@ footer a{color:var(--marigold);text-decoration:none;}
     <img src="bruce-service.jpg" alt="Nicole VanCleave with Bruce, her psychiatric service dog">
     <div>
       <h2>About the author</h2>
-      <p>Nicole VanCleave is an ASCT Certified Instructor and the founder of Daily K9 Academy, training owner-handled psychiatric service dog teams across Phoenix and Maricopa County. She trained her own PSD, Bruce, a rehomed German Shepherd nobody selected for the work. <a href="/about-nicole">Read her full background &rarr;</a></p>
+      <p>Nicole VanCleave is an ASCT Certified Instructor and the founder of Daily K9 Academy, coaching owner-trained service dog teams (psychiatric, autism, medical alert and response, and mobility) across Goodyear and greater Maricopa County, Arizona. She trained her own PSD, Bruce, a rehomed German Shepherd nobody selected for the work. <a href="/about-nicole">Read her full background &rarr;</a></p>
     </div>
   </div>
 </main>

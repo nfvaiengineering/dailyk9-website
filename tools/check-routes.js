@@ -47,8 +47,9 @@ const NO_CANONICAL = new Set([
 ]);
 
 /* Pages with no <footer> at all, so no footer NAP to check.
- * /privacy-policy is a legal-document layout whose contact block deliberately
- * carries the full street address — which the standard footer NAP must NOT.
+ * /privacy-policy is a legal-document layout with its own contact block instead
+ * of the standard site footer. (Until 15 Sep 2026 that block carried the full
+ * street address; Nicole had it replaced with "Maricopa County, Arizona".)
  * /review-thanks is a minimal post-submission card. */
 const NO_FOOTER_NAP = new Set([
   "/privacy-policy", "/review-thanks",

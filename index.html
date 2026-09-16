@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Owner-Trained Service Dog Training in Phoenix | Daily K9</title>
-<meta name="description" content="Owner-trained service dog programs in Maricopa County, AZ. Handler first, dog second. Psychiatric service dog (PSD) specialty. ASCT Certified Instructor."><link rel="canonical" href="https://dailyk9.com/">
+<meta name="description" content="Owner-trained service dog programs in Maricopa County, AZ. Handler first, dog second. Psychiatric, autism, medical alert and mobility service dogs. ASCT Certified Instructor."><link rel="canonical" href="https://dailyk9.com/">
 
 <!-- Canonical URL: tells Google the one true address, prevents
      www/non-www and http/https duplicate-content penalties -->
@@ -23,7 +23,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Daily K9 Academy">
 <meta property="og:title" content="Daily K9 Academy — Train the service dog you already love">
-<meta property="og:description" content="Owner-trained service dog programs in Maricopa County, AZ. Handler first, dog second. Psychiatric service dog (PSD) specialty. ASCT Certified Instructor.">
+<meta property="og:description" content="Owner-trained service dog programs in Maricopa County, AZ. Handler first, dog second. Psychiatric, autism, medical alert and mobility service dogs. ASCT Certified Instructor.">
 <meta property="og:url" content="https://dailyk9.com/">
 <meta property="og:image" content="https://dailyk9.com/Bruce-11.jpg">
 <meta property="og:image:alt" content="Nicole and Bruce in a focused service-dog training session, Phoenix">
@@ -31,7 +31,7 @@
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Daily K9 Academy — Train the service dog you already love">
-<meta name="twitter:description" content="Owner-trained service dog programs in Maricopa County, AZ. Handler first, dog second. PSD specialty. ASCT Certified Instructor.">
+<meta name="twitter:description" content="Owner-trained service dog programs in Maricopa County, AZ. Psychiatric, autism, medical alert and mobility. ASCT Certified Instructor.">
 <meta name="twitter:image" content="https://dailyk9.com/Bruce-11.jpg">
 
 <!-- LocalBusiness structured data (JSON-LD): the single most
@@ -139,7 +139,7 @@ nav .container {
 
 .btn-primary {
   background: var(--marigold);
-  color: var(--bone) !important;
+  color:#182F2F !important;
   padding: 11px 18px;
   border-radius: 4px;
   font-size: 14px;
@@ -329,7 +329,7 @@ h2 {
   opacity: 0.88;
 }
 
-/* PSD SPECIALTY (deep teal) */
+/* WHERE IT STARTED - .specialty section (deep teal) */
 .specialty {
   background: var(--teal);
   color: var(--bone);
@@ -718,6 +718,11 @@ footer {
    screen still got the two-column layout meant for tablets: four 22px serif
    headings crammed into ~156px columns. One column reads properly and removes
    the last chance for the min-content overflow above to come back. */
+/* Clear the fixed Handler chat bubble at the bottom of the page on phones.
+   Same 132px the other 20 pages use. */
+@media (max-width: 767px) {
+  footer { padding-bottom: 132px; }
+}
 @media (max-width: 560px) {
   .options-grid { grid-template-columns: 1fr; }
   .how-grid { grid-template-columns: 1fr; }
@@ -748,7 +753,7 @@ footer {
       "email": "nv@dailyk9.com",
       "priceRange": "$$",
       "foundingDate": "2025",
-      "description": "Owner-trained psychiatric service dog programs and in-home obedience training in Goodyear and greater Maricopa County, Arizona. Handler-first, one-on-one apprenticeship over 12-24 months. ASCT Certified Instructor.",
+      "description": "Owner-trained service dog programs (psychiatric, autism, medical alert and response, mobility) and in-home obedience training in Goodyear and greater Maricopa County, Arizona. Handler-first, one-on-one apprenticeship over 12-24 months. ASCT Certified Instructor.",
       "founder": {
         "@id": "https://dailyk9.com/#nicole"
       },
@@ -840,6 +845,9 @@ footer {
       ],
       "knowsAbout": [
         "Psychiatric service dog training",
+        "Autism service dog training",
+        "Medical alert and response service dog training",
+        "Mobility service dog training",
         "Owner-trained service dogs",
         "Public access training",
         "Deep pressure therapy",
@@ -855,7 +863,7 @@ footer {
             "itemOffered": {
               "@type": "Service",
               "name": "Owner-Trained Service Dog Program",
-              "serviceType": "Psychiatric service dog training",
+              "serviceType": "Service dog training",
               "provider": {
                 "@id": "https://dailyk9.com/#business"
               }
@@ -943,7 +951,7 @@ footer {
     </a>
     <div class="nav-links">
       <a href="#program">How it works</a>
-      <a href="#story">PSD specialty</a>
+      <a href="/types-of-service-dogs">Service dog types</a>
       <a href="#founder">Founder</a>
       <a href="/about-nicole">About</a>
       <a href="/contact">Contact</a>
@@ -962,15 +970,20 @@ footer {
         <div class="eyebrow">Owner-trained service dog programs · Goodyear, AZ</div>
         <h1>Train the service dog you already love.</h1>
         <!-- RETRIEVAL WINDOW: every entity target in this string must end within the
-     first 202 characters. Last target currently ends at 193/202 (9 chars headroom).
-     Adding to the credential or the name will push it out SILENTLY — re-measure
-     with tools/check-routes.js notes + the window check before editing this line. -->
-        <p class="hero-sub">Daily K9 Academy trains psychiatric service dog teams in Goodyear and greater Maricopa County, Arizona for a fraction of a $40,000 program placement. ASCT Certified Instructor, handler-first, one-on-one — using the dog you already own, trained to full public access.</p>
+     first 202 characters, counted from the first character of this paragraph's own
+     text. Targets: brand 16, Goodyear 68, Maricopa County 96, Arizona 105,
+     "ASCT Certified Instructor" 178 - so the last one ends at 178/202 (24 chars
+     headroom). Adding to the credential or the name will push it out SILENTLY.
+     Re-measure with: node -e "const s=require('fs').readFileSync('index.html','utf8')
+     .match(/<p class=.hero-sub.>([^<]*)</)[1]; console.log(s.indexOf('ASCT Certified
+     Instructor')+25)"  (the pre-15-Sep-2026 numbers here used an unstated baseline
+     ~18 chars higher and did not reproduce; this convention is the string itself). -->
+        <p class="hero-sub">Daily K9 Academy coaches owner-trained service dog teams in Goodyear and greater Maricopa County, Arizona for a fraction of a $40,000 program placement. ASCT Certified Instructor, handler-first, one-on-one — using the dog you already own, trained to full public access.</p>
         <div class="hero-cta">
           <a href="https://dailyk9.com/start" class="btn-primary">Book your free intake call</a>
           <a href="tel:+14807122772" class="btn-secondary">Or call (480) 712-2772</a>
         </div>
-        <p style="margin-top:18px;font-size:13px;color:var(--stone);letter-spacing:.3px;">ASCT Certified Instructor · PSD specialty · Founder-trained, handler-owned</p>
+        <p style="margin-top:18px;font-size:13px;color:var(--stone);letter-spacing:.3px;">ASCT Certified Instructor · Founder-trained, handler-owned</p>
       </div>
       <div class="photo photo-hero"><img src="Bruce-11.jpg" alt="Nicole and Bruce training at golden hour — handler and service dog"></div>
     </div>
@@ -1011,16 +1024,17 @@ footer {
   <div class="container">
     <div class="specialty-grid">
       <div>
-        <div class="section-eyebrow">Specialty</div>
-        <h2>Psychiatric service dog teams.</h2>
+        <div class="section-eyebrow">Where it started</div>
+        <h2>It started with psychiatric service dogs.</h2>
         <p class="lede">The lane placement programs under-serve and scams target hardest — and the lane Nicole lives in. Deep pressure, alerting, grounding, crowd buffering: not optional to a handler's daily function.</p>
-        <p style="margin:-32px 0 0;"><a href="https://dailyk9.com/psychiatric-service-dog-training-phoenix" style="color:var(--marigold);font-weight:600;text-decoration:none;">Psychiatric service dog training in Phoenix — how it works &rarr;</a></p>
+        <p class="lede">Today we coach owner-trained teams for autism, medical alert and response, and mobility too. Every type of service dog except guide and hearing dogs.</p>
+        <p style="margin:-32px 0 0;"><a href="https://dailyk9.com/psychiatric-service-dog-training-phoenix" style="color:var(--marigold);font-weight:600;text-decoration:none;">Psychiatric service dog training in Phoenix — how it works &rarr;</a><br><a href="/types-of-service-dogs" style="color:var(--marigold);font-weight:600;text-decoration:none;">What each type of service dog does &rarr;</a></p>
         <div class="pull-quote">
           "I trained my own PSD because I couldn't afford a placement. His name is Bruce. He is the reason I can sit down and build a company. I built Daily K9 for the person I was four years ago."
           <div class="pull-quote-attribution">— Nicole VanCleave, ASCT Certified Instructor · PSD handler</div>
         </div>
       </div>
-      <div class="photo photo-tall photo-dark"><img src="Bruce-13.jpg" alt="Bruce, certified psychiatric service dog, on a down-stay at sunset"></div>
+      <div class="photo photo-tall photo-dark"><img src="Bruce-13.jpg" alt="Bruce, Nicole's psychiatric service dog, on a down-stay at sunset"></div>
     </div>
   </div>
 </section>
@@ -1064,14 +1078,14 @@ footer {
       <div class="price-card premium">
         <div class="price-tag-label">Service dogs · the core program</div>
         <h3>Owner-Trained Service Dog Program</h3>
-        <div class="price-meta">12–24 months · one-on-one · PSD specialty</div>
+        <div class="price-meta">12–24 months · one-on-one · psychiatric, autism, medical, mobility</div>
         <div class="price-figure">A fraction of a $40,000 placement<small>Built around your dog and your timeline — walked through on your free intake call. There's always a path.</small></div>
         <ul class="price-list">
           <li>Prospect assessment of your dog — or help choosing one</li>
           <li>You're trained alongside your dog, so you know exactly what to do — never handed a finished dog you can't actually handle</li>
-          <li>Walk into any store, clinic, or airport with a dog so calm and focused no one even notices him</li>
-          <li>Tasks built for your disability — interrupt a panic attack before it peaks, ground you in a crowd, get you out the door on the hard days</li>
-          <li>Graduate to an ASCT-backed standard that holds up anywhere — so you're never questioned or turned away at the door</li>
+          <li>Public-access work in the stores, clinics, and airports you actually use, to a calm, measurable standard</li>
+          <li>Tasks built for your disability - interrupt a panic attack, alert to a blood sugar drop, brace you on the stairs, track a child who wanders off</li>
+          <li>Graduate against ASCT standards a stranger can verify, and know your access rights at the door</li>
           <li>We never hand you the leash and vanish — for the life of your dog, we're one text away</li>
         </ul>
         <a href="https://dailyk9.com/start" class="btn-primary">Book your free intake call</a>
@@ -1080,7 +1094,7 @@ footer {
         <div class="price-tag-label">Now accepting pet clients</div>
         <h3>Everyday Obedience Training</h3>
         <div class="price-meta">Pet dogs · private, in-home · Phoenix metro</div>
-        <div class="price-figure"><span class="price-banner">Grand-opening pricing</span><div style="margin-top:14px;">$100 intro session</div><small>Limited-time launch rate while a few intro slots last. A no-commitment way to start.</small></div>
+        <div class="price-figure"><span class="price-banner">Fall special thru Dec 1, 2026</span><div style="margin-top:14px;">$99 intro session</div><small>Reg. $135. Foundations 5-pack $495 (reg. $625). A no-commitment way to start.</small></div>
         <ul class="price-list">
           <li>Loose-leash walking and reliable recall</li>
           <li>Sit, place, stay, and rock-solid door manners</li>
@@ -1146,14 +1160,6 @@ footer {
       </div>
       <div class="review-card">
         <div class="review-photos one">
-          <img src="bruce-service.jpg" alt="Nicole and Bruce, her psychiatric service dog, working a public-access session in a grocery store aisle" loading="lazy">
-        </div>
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-quote">"I trained my own PSD because I couldn't afford a placement. His name is Bruce. He's the reason I can sit down and build a company. I built Daily K9 for the person I was four years ago."</p>
-        <div class="review-attr">Nicole VanCleave · Founder, ASCT Certified Instructor · PSD handler</div>
-      </div>
-      <div class="review-card">
-        <div class="review-photos one">
           <img src="scout-porch.jpg" alt="Scout, a German Shepherd trained by Daily K9 Academy, sitting calmly on leash on his front porch" loading="lazy">
         </div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -1198,7 +1204,7 @@ footer {
       </div>
       <div class="faq-item">
         <div class="faq-q">How much does the program cost?</div>
-        <div class="faq-a">A fraction of placement. Exact numbers depend on the dog, the disability, and the timeline — we walk through them on the intake call. There's always a path.</div>
+        <div class="faq-a">Most owner-trained teams land $4,000-$9,000 over 12-24 months, billed monthly. Every service dog type runs through the same program at the same rates, priced by where your dog starts and how many tasks you need. You get your exact number on the free call.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What if my dog doesn't pass the prospect assessment?</div>
@@ -1241,7 +1247,7 @@ footer {
       <div class="footer-col">
         <h4>The program</h4>
         <a href="#program">How it works</a>
-        <a href="#story">PSD specialty</a>
+        <a href="/types-of-service-dogs">Service dog types</a>
         <a href="https://dailyk9.com/pricing">Programs &amp; pricing</a>
         <a href="https://dailyk9.com/psychiatric-service-dog-training-phoenix">PSD training in Phoenix</a>
         <a href="#faq">FAQ</a>
