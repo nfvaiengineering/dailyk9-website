@@ -4,6 +4,9 @@
 # Old poster QR code
 /appointments                    /start                        301
 
+# Retired 21 Sep 2026: the on-site review form is gone, reviews go to Google.
+/review-thanks                   /reviews                      301
+
 # www -> apex. Netlify domain config already does this (re-verified 2026-08-19:
 # https://www.dailyk9.com/pricing -> 301 -> https://dailyk9.com/pricing).
 # Kept explicit as belt-and-braces.
@@ -31,7 +34,6 @@ https://www.dailyk9.com/*        https://dailyk9.com/:splat    301!
 /psychiatric-service-dog-tasks.html /psychiatric-service-dog-tasks 301!
 /psychiatric-service-dog-training-phoenix.html /psychiatric-service-dog-training-phoenix 301!
 /records-received.html           /records-received             301!
-/review-thanks.html              /review-thanks                301!
 /reviews.html                    /reviews                      301!
 /scheduling.html                 /scheduling                   301!
 /service-dog-checklist.html      /service-dog-checklist        301!

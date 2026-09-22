@@ -40,7 +40,7 @@ const fail = (route, msg) => failures.push({ route, msg });
  * only by a form redirect. A canonical on a page no crawler should reach is
  * noise, and metadata on a page that never surfaces is dead weight. */
 const NO_CANONICAL = new Set([
-  "/records-received", "/review-thanks",
+  "/records-received",
   "/call-requested",        // post-submission thank-you for the /start call-request form
   "/checklist-sent",        // post-submission thank-you for the service-dog checklist form
   "/service-dog-checklist", // noindex lead magnet, reached from /checklist-sent, not a search landing page
@@ -50,11 +50,11 @@ const NO_CANONICAL = new Set([
  * /privacy-policy is a legal-document layout with its own contact block instead
  * of the standard site footer. (Until 15 Sep 2026 that block carried the full
  * street address; Nicole had it replaced with "Maricopa County, Arizona".)
- * /review-thanks is a minimal post-submission card. */
+ * The post-submission cards below share one minimal layout. */
 const NO_FOOTER_NAP = new Set([
-  "/privacy-policy", "/review-thanks",
-  "/call-requested",        // minimal post-submission card, same layout as /review-thanks
-  "/checklist-sent",        // minimal post-submission card, same layout as /review-thanks
+  "/privacy-policy",
+  "/call-requested",        // minimal post-submission card
+  "/checklist-sent",        // minimal post-submission card
 ]);
 
 /* The canonical footer NAP. One string, everywhere it appears.
