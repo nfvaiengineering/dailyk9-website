@@ -128,7 +128,7 @@ nav .container {
   text-transform: uppercase;
   margin-top: 4px;
 }
-.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a {
   color: var(--teal);
   text-decoration: none;
@@ -137,6 +137,12 @@ nav .container {
   transition: color 0.15s ease;
 }
 .nav-links a:hover { color: var(--marigold); }
+/* Mid-width nav: drop text links one at a time so the nav stays on 1 line
+   (78px). Breakpoints are the measured wrap points with a 17px Windows
+   scrollbar. Everyday training, Pricing and the button never hide. */
+@media (max-width: 1073px) { .nav-links a[href="/contact"] { display: none; } }
+@media (max-width: 999px) { .nav-links a[href="/reviews"] { display: none; } }
+@media (max-width: 925px) { .nav-links a[href="/about-nicole"] { display: none; } }
 
 .btn-primary {
   background: var(--marigold);
@@ -953,11 +959,10 @@ footer {
     <div class="nav-links">
       <a href="#program">How it works</a>
       <a href="/types-of-service-dogs">Service dog types</a>
-      <a href="#founder">Founder</a>
+      <a href="/dog-training-goodyear">Everyday training</a>
       <a href="/about-nicole">About</a>
       <a href="/contact">Contact</a>
       <a href="/reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
       <a href="https://dailyk9.com/pricing">Pricing</a>
       <a href="https://dailyk9.com/start" class="btn-primary">Book your free intake call</a>
     </div>
@@ -1104,6 +1109,7 @@ footer {
           <li>Built for busy households - folded into daily life</li>
         </ul>
         <a href="https://dailyk9.com/pet-intake" class="btn-secondary">Book basic training</a>
+        <a href="/dog-training-goodyear" style="color:var(--marigold-deep);font-weight:600;text-decoration:none;font-size:14px;margin-top:14px;align-self:flex-start;">How everyday training works &rarr;</a>
       </div>
     </div>
   </div>
